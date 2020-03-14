@@ -14,7 +14,7 @@
 ### Association
 - has_many :carts
 - has_many :cards
-- has_many :productS
+- has_many :products
 
 
 ## cardsテーブル
@@ -71,7 +71,7 @@
 |------|----|-------|
 |name|string|null: false, unique: true|
 ### Association
-- has_many :products
+- has_many :products,dependent::nullify
 
 
 ## brandsテーブル
@@ -79,7 +79,7 @@
 |------|----|-------|
 |name|string|null: false, unique: true|
 ### Association
-- has_many :products
+- has_many :products,dependent::nullify
 
 
 ## photosテーブル
