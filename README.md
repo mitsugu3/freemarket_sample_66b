@@ -85,7 +85,7 @@
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image_url|string|||
+|image_url|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
@@ -101,3 +101,4 @@
 ### Association
 - belongs_to :user
 - belongs_to :product
+
