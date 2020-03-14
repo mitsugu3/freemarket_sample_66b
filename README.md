@@ -16,7 +16,6 @@
 - has_many :carts
 - has_many :cards
 
-
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
