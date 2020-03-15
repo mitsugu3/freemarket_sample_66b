@@ -15,7 +15,7 @@
 - has_many :carts
 - has_many :cards
 - has_many :products
-- belongs_to :like
+- has_many :likes
 
 
 ## cardsテーブル
@@ -71,6 +71,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
+|ancestry|
 ### Association
 - has_many :products,dependent::nullify
 - anceshas_ancestrytry
