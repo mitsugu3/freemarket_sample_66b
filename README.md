@@ -5,7 +5,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, add_index: true|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -15,6 +14,7 @@
 ### Association
 - has_many :carts
 - has_many :cards
+- has_many :products
 - has_many :likes
 
 
@@ -47,7 +47,7 @@
 - belongs_to :category
 - belongs_to :brand
 - has_many :photos
-- belongs_to :comment
+- has_many :comments
 
 ## cartsテーブル
 |Column|Type|Options|
@@ -73,31 +73,33 @@
 |name|string|null: false, unique: true|
 |ancestry|
 ### Association
-- has_many :products
+- has_many :products,dependent::nullify
+- anceshas_ancestrytry
 
-
-## brandテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
 ### Association
-- has_many :products
+- has_many :products,dependent::nullify
 
 
-## photoテーブル
+## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|photo_id|string|
+|image_url|string|null: false|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :products
+- belongs_to :product
 
 
-## commentテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |comment_id|integer|null: false, foreign_key: true|
 |created_at|timestamp|null: false|
+|comment|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :product
