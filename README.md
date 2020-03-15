@@ -12,10 +12,10 @@
 |last_name|string|null: false|
 |first_name|string|null: false|
 ### Association
-- has_many :carts
-- has_many :cards
-- has_many :likes
-
+- has_many :carts dependent:destroy
+- has_many :cards dependent:destroy
+- has_many :likes dependent:destroy
+- has_many :products dependent:destroy
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -28,11 +28,11 @@
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user|references|null: false, foreign_key: true|
 |name|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false|
 |condition|string|null: false|
-|photo_id|references|null: false, foreign_key: true|
 |price|integer|null: false|
 |area|integer|null: false|
 |status|string|null: false|
@@ -41,11 +41,12 @@
 |delivery_method|string|null: false|
 |delivery_money|integer|null: false|
 ### Association
-- belongs_to :cart
+- belongs_to :cart dependent:destroy
 - belongs_to :category
 - belongs_to :brand
-- has_many :photos
-- belongs_to :comment
+- has_many :photos dependent:destroy
+- has_many :comment dependent:destroy
+
 
 ## cartsテーブル
 |Column|Type|Options|
@@ -62,8 +63,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
+|products_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :products
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -73,7 +76,6 @@
 ### Association
 - has_many :products
 
-
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -81,14 +83,12 @@
 ### Association
 - has_many :products
 
-
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |photo|string|
 ### Association
-- has_many :products
-
+- belongs_to :product
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -96,5 +96,5 @@
 |user_id|references|null: false, foreign_key: true|
 |comment_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :product
+- belongs_to :user dependent:destroy
+- belongs_to :product dependent:destroy
