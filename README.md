@@ -5,7 +5,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, add_index: true|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -22,19 +21,18 @@
 |Column|Type|Options|
 |------|----|-------|
 |customer_id|string|null: false|
-|card_id|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to:user
 
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false|
 |condition|string|null: false|
-|photo_id|integer|null: false, foreign_key: true|
+|photo_id|references|null: false, foreign_key: true|
 |price|integer|null: false|
 |area|integer|null: false|
 |status|string|null: false|
@@ -52,8 +50,8 @@
 ## cartsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|products_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|products_id|references|null: false, foreign_key: true|
 |products_name|string|null: false|
 |money|integer||
 ### Association
@@ -63,7 +61,7 @@
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -76,7 +74,7 @@
 - has_many :products
 
 
-## brandテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
@@ -84,20 +82,19 @@
 - has_many :products
 
 
-## photoテーブル
+## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|photo_id|string|
+|photo|string|
 ### Association
 - has_many :products
 
 
-## commentテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
-|created_at|timestamp|null: false|
+|user_id|references|null: false, foreign_key: true|
+|comment_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
