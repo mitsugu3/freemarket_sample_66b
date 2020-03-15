@@ -15,6 +15,7 @@
 ### Association
 - has_many :carts
 - has_many :cards
+- has_many :likes
 
 
 ## cardsテーブル
@@ -66,10 +67,11 @@
 ### Association
 - belongs_to :user
 
-## categoryテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
+|ancestry|
 ### Association
 - has_many :products
 
