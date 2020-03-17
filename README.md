@@ -21,12 +21,13 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|zipcode|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|zip_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |town|string|null: false|
-|housenumber|string|null: false|
-|buildingname|string|null: false|
+|house_number|string|null: false|
+|building_name|string|null: false|
 ### Association
 - belongs_to:user
 
@@ -66,7 +67,6 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
-|product_name|string|null: false|
 |money|integer|
 ### Association
 - belongs_to :user
