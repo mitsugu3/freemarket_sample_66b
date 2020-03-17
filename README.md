@@ -11,6 +11,8 @@
 |last_name|string|null: false|
 |first_name|string|null: false|
 ### Association
+- has_many :addresses dependent:destroy
+- has_many :comments dependent:destroy
 - has_many :carts dependent:destroy
 - has_many :cards dependent:destroy
 - has_many :likes dependent:destroy
@@ -63,8 +65,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|products_id|references|null: false, foreign_key: true|
-|products_name|string|null: false|
+|product_id|references|null: false, foreign_key: true|
+|product_name|string|null: false|
 |money|integer|
 ### Association
 - belongs_to :user
