@@ -66,7 +66,7 @@
 |products_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :products
+- belongs_to :product
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -97,4 +97,4 @@
 |comment_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user 
-- belongs_to :product 
+- belongs_to :product
