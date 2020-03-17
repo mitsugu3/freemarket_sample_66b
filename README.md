@@ -8,7 +8,6 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|address|string|null: true|
 |last_name|string|null: false|
 |first_name|string|null: false|
 ### Association
@@ -16,6 +15,18 @@
 - has_many :cards dependent:destroy
 - has_many :likes dependent:destroy
 - has_many :products dependent:destroy
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zipcode|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|town|string|null: false|
+|housenumber|string|null: false|
+|buildingname|string|null: false|
+### Association
+- belongs_to:user
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -29,9 +40,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 |category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false|
+|brand_id|references|null: false, foreign_key: true|
 |condition|string|null: false|
 |price|integer|null: false|
 |area|integer|null: false|
@@ -45,7 +56,7 @@
 - belongs_to :category
 - belongs_to :brand
 - has_many :photos dependent:destroy
-- has_many :comment dependent:destroy
+- has_many :comments dependent:destroy
 
 
 ## cartsテーブル
@@ -54,16 +65,16 @@
 |user_id|references|null: false, foreign_key: true|
 |products_id|references|null: false, foreign_key: true|
 |products_name|string|null: false|
-|money|integer||
+|money|integer|
 ### Association
 - belongs_to :user
-- has_many :products
+- belongs_to :product
 
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|products_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -87,6 +98,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |photo|string|
+|product_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
@@ -94,7 +106,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|comment_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
+|text|string|null: false|
 ### Association
 - belongs_to :user 
 - belongs_to :product
