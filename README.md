@@ -1,5 +1,5 @@
 # README
-aaaa
+
 # フリマアプリ DB設計
 
 ## usersテーブル
