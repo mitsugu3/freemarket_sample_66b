@@ -57,7 +57,7 @@ group :production do
 end
 
 # 必要なgemfileを設置
-gem ‘devise’
-gem ‘font-awesome-sass’
-gem ‘haml-rails’
-gem ‘bundler’
+gem 'devise'
+gem 'font-awesome-sass'
+gem 'haml-rails'
+gem 'bundler'
