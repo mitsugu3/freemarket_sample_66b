@@ -219,7 +219,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
   byebug
   capistrano
   capistrano-bundler
