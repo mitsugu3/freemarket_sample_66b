@@ -56,11 +56,10 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-# 必要なgemfileを設置
-gem 'devise'
-gem 'font-awesome-sass'
-gem 'haml-rails'
-gem 'bundler'
+
+
+
+
 
 
 
@@ -72,3 +71,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+# 必要なgemfileを設置
+gem 'devise'
+gem 'font-awesome-sass'
+gem 'haml-rails'
+gem 'bundler'
+
