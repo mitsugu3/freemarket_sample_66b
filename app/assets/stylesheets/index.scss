@@ -30,23 +30,33 @@
 }
 
 .main {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 60px;
+  line-height: 1.2;
+  color: #fff;
   width: 100%;
   height: 560px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;
-  padding: 0 60px;
-  display: flex;
-  align-items: center;
-  background-image: url("/images/bg-mainVisual-pict_pc.jpg");
+  padding: 0 120px;
+  background-image: url("/images/material/pict/bg-mainVisual-pict_pc.jpg");
   &__sub {
-    width: 100%;
-    height: 560px;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     font-size: 18px;
     line-height: 1.2;
     color: #fff;
+  &__app-button {
+    margin-right: 10px;
+    } 
+    &__ios {
+    background-image: url("/images/banner_android.svg");
+
+    }
+    &__and {
+    background-image: url("/images/banner_ios.svg");
+    }
   }
 }
 
@@ -75,6 +85,10 @@
     max-width: 1020px;
     width: 100%;
     margin: 0 auto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    margin: 0 0 0 2px;
   }
 }
 
@@ -87,7 +101,7 @@
   font-size: 27px;
   font-weight: bold;
   line-height: 1.4;
-  background-image: url("/images/bg-topMiddleDl-pict.jpg");
+  background-image: url("/images/material/pict/bg-topMiddleDl-pict.jpg");
   color: #fff;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
   text-align: left;
@@ -146,19 +160,18 @@
   background-color: #272727;
   &__content {
     display: flex;
+    max-width: 840px;
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    margin: 0 2% 0 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;  
     &__left {
-      &__h3 {
         margin: 0 0 20px;
         font-size: 16px;
         font-weight: bold;
-      }
-      flex-direction: column;
-      width: calc(1 / 3 * 100%);
-      margin: 0 2% 0 0;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 32px;  
     }
     &__center {
       flex-direction: column;
@@ -180,9 +193,11 @@
     }
   }
   &__logo {
-  
+    max-width: 160px;
+    vertical-align: bottom;
+    background-image: url("/images/material/logo/logo-white.png");
   }
-  &__footer__copyright {
+  &__copyright {
     font-size: 14px;
   }
 }
