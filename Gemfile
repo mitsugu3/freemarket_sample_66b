@@ -60,4 +60,14 @@ end
 gem 'devise'
 gem 'font-awesome-sass'
 gem 'haml-rails'
+
 gem 'bundler'
+
+# capistrano(自動更新機能の実装)
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
