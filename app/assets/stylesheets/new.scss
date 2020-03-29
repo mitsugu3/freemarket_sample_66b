@@ -1,0 +1,38 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.signup-container{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  .signup-main{
+    height: calc(100vh - 200px);
+    background-color:#f8f8f8;
+    display: flex;
+    justify-content: center;
+    &__menu{
+      width: 700px;
+      background-color: #fff;
+      margin: 10px 0px 50px 0px;
+      padding-top: 50px;
+      text-align: center;
+      font-size: 20px;
+        &_list{
+          width: 100%;
+          padding: 10px 50px;
+          &_mail{
+            color: #3CCACE;
+            height: 50px;
+            width: 100px;
+            color: #fff;
+            font-size: 17px;
+            padding-top: 20px;
+          }
+        }
+    }
+  }
+}
+.hidden{
+  display: none;
+}
+
