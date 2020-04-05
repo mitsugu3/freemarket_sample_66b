@@ -1,0 +1,684 @@
+//mixin記述
+//ぼかし文字 白
+@mixin font-shadow($color: white) {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 60px;
+  line-height: 1.2;
+  color: white;
+}
+
+//ios
+@mixin ios {
+  width: 180px;
+  height: 55px;
+  background-size: 180px auto;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/icon/banner_ios.svg");
+}
+
+//android
+@mixin and {
+  width: 180px;
+  height: 55px;
+  background-size: 180px auto;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/icon/banner_android.svg");
+  }
+
+//黒太文字
+@mixin black-font {
+  font-size: 28px;
+  line-height: 1.4;
+  text-align: center;
+  color: black;
+  font-weight: bold;  
+}
+
+//黒中文字
+@mixin black-middle-font {
+  font-size: 24px;
+  font-weight: bold;
+  font-size: 17px;
+  padding-bottom: 20px;
+}
+
+//黒小文字
+@mixin black-small-font {
+  font-size: 17px;
+  color: black;
+}
+
+//水色文字
+@mixin blue-font {
+  margin: 5px auto;
+  font-size: 24px;
+  text-decoration: none;
+  color: #3CCACE;
+  }
+
+//ボーダー
+@mixin border {
+  margin: 15px auto;
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;  
+}
+
+//水色ボックス
+@mixin number-box {
+margin-left: -40px;
+text-align: center;
+background-color: #3CCACE;
+width: 50px;
+height: 50px;
+}    
+
+//商品ボックス
+@mixin white-box {
+  width: 220px;
+  height: 245px;
+  background-color: white;
+}    
+
+//商品詳細
+@mixin details {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+  margin-right: 30px;  
+}    
+
+//ここまで
+
+//出品するボタン
+.scroll_button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 120px;
+  height: 116px;
+  background-size: 120px auto;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/icon/icon_camera.png");
+}
+
+//ヘッダー記述
+.header {
+  background-color: $white;
+  margin: 5px auto;
+  max-width: 1040px;
+  &__box {
+    padding: 10px 0;
+    display: flex;
+    &__logo {
+      width: 200px;
+      height: 50px;
+      background-image: url("/images/material/logo/logo.png");
+      background-size: 140px auto;
+      background-repeat: no-repeat;
+    }
+    &__input {
+      cursor: pointer;
+      width: calc(100% - 36px);
+      border: 1px solid #ddd;   
+      height: 36px;
+      border-radius: 5px;
+      p {
+        color: gray;
+        font-size: 15px;
+        margin-top: 5px;
+        margin-left: 5px;   
+      }
+      &__square {
+        display: flex;
+        height: 36px;
+        width: 36px;
+        border: 0;
+        background-color: #3CCACE;
+        margin-left: 840px;
+        margin-top: -28px;
+        &__img {
+          height: 36px;
+          width: 36px;
+          margin-top: 7px;
+          margin-left: 7px;
+          background-repeat: no-repeat;
+          background-size: 22px auto;
+          background-image: url("/images/material/icon/icon-search_1.png");
+        }
+      }
+    }
+  }
+
+  //ナビゲーター
+  &__nav { 
+    padding-bottom: -20px;
+    font-size: 14px;
+    display: flex;
+    ul.right {
+      display: flex;
+      li {
+      padding: 0 0 0 16px;
+      }
+    }    
+    ul.left {
+      margin-left: 700px;
+      display: flex;
+      li {
+      padding: 0 0 0 16px;
+      } 
+    }  
+  }
+}  
+
+
+//メイン部分
+.main {
+  p {
+    padding-top: 180px;
+    padding-left: 180px;
+    @include font-shadow;
+  }
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/pict/bg-mainVisual-pict_pc.jpg");
+  &__sub {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 18px;
+    padding-left: 180px;
+    padding-top: 14px;
+    line-height: 1.2;
+    color: $white;
+  }
+  &__app-button {
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    &__ios {
+      @include ios;
+    }
+    &__and {
+      @include and;
+    }
+  }
+}
+
+.introduct {
+  @include black-font;
+  padding-top: 40px;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 100px;
+  &__border {
+    @include border;
+  }
+  &__picture {
+    margin: 20px auto;
+    width: 1020px;
+    line-height: 1.4;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    &__1 {
+    padding-left: 40px;
+    height: 300px;
+    width: 300px;
+    background-size: 300px auto;
+    background-repeat: no-repeat;
+    background-image: url("/images/material/pict/pict-reason-01.jpg");
+      &__number {
+        color: white;
+        font-size: 26px;
+        @include number-box;
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+    &__2 {
+      padding-left: 40px;
+      height: 300px;
+      width: 300px;
+      background-size: 300px auto;
+      background-repeat: no-repeat;
+      background-image: url("/images/material/pict/pict-reason-02.jpg");
+      &__number {
+        color: white;
+        font-size: 26px;
+        @include number-box;
+        p {
+          padding-top: 5px;
+        }  
+      }
+    }
+    &__3 {
+      padding-left: 40px;
+      height: 300px;
+      width: 300px;
+      background-size: 300px auto;
+      background-repeat: no-repeat;
+      background-image: url("/images/material/pict/pict-reason-03.jpg");
+      &__number {
+        color: white;
+        font-size: 26px;
+        @include number-box;
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+  }    
+  &__list {
+    li {
+      margin: 5px auto;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+    }
+    span {
+      @include blue-font;
+    }
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 16px 0 0;
+    margin: 5px auto;
+    width: 1020px;
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin-top: 30px;
+      text-decoration: none;
+      @include black-small-font;
+    }
+  }
+}
+
+//会員数〜
+.middle {
+  background-position: bottom right;
+  height: 300px;
+  background-size: cover;
+  align-items: center;
+  padding-left: 300px;
+  padding-top: 100px;
+  p {
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  font-size: 18px;
+  line-height: 1.5;
+  background-image: url("/images/material/pict/bg-topMiddleDl-pict.jpg");
+  color: $white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  text-align: left;
+  margin: 0 auto;
+  &__image {
+    display: flex;
+    margin-top: 10px;
+    &__1 {
+      @include ios;
+    } 
+    &__2 {
+      @include and;
+    }
+  }
+}
+
+//FURIMAの特徴
+.features {
+  margin: 5px auto;
+  padding-top: 40px;
+  text-align: center;
+  padding-bottom: 100px;
+  width: 1020px;
+  &__title {
+    @include black-font;
+    &__border {
+      @include border;
+    }
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__1 {
+      width: 250px;
+      height: 500px;
+      background-image: url("/images/material/icon/icon-01.png");
+      background-size: 250px auto;
+      background-repeat: no-repeat;
+      h3 {
+        padding-top: 400px;
+        @include black-middle-font;
+      }
+        p {
+          font-size: 17px;
+          color: black;
+       }
+    }
+    &__2 {
+      width: 250px;
+      height: 500px;
+      background-image: url("/images/material/icon/icon-03.png");
+      background-size: 250px auto;
+      background-repeat: no-repeat;
+      h3 {
+        padding-top: 400px;
+        @include black-middle-font;
+      }
+        p {
+          font-size: 17px;
+          color: black;
+       }
+    }
+    &__3 {
+      width: 250px;
+      height: 500px;
+      background-image: url("/images/material/icon/icon-04.png");
+      background-size: 250px auto;
+      background-repeat: no-repeat;
+    }
+      h3 {
+        padding-top: 400px;
+        @include black-middle-font;
+      }
+        p {
+          @include black-small-font;
+        }
+  }
+  }
+}
+
+//ピックアップ
+.pickup-list {
+  padding: 80px 0 0;
+  background-color: #f8f8f8;
+  &__title {
+    @include black-font;
+    p {
+      @include blue-font;
+    }
+    &__box {
+      width: 780px;
+      margin: 26px auto;
+      display: flex;
+      justify-content: space-around;
+      &__1 {
+        @include white-box;
+        &__img {
+          background-size: 220px auto;
+          width: 220px;
+          height: 70%;
+          margin-top: -20px;
+          background-repeat: no-repeat;
+          background-image: url("/images/material/icon/image-01.png");
+        }
+        &__ul {
+          padding: 16px;
+          overflow: hidden;
+          line-height: 1.5;
+          font-size: 16px;
+          text-align: left;
+          &__title {
+            @include details;
+          }  
+        p {
+          font-size: 10px;
+          text-align: left;
+          color: gray;
+        }
+        }
+    }
+    &__2 {
+      @include white-box;
+      &__img {
+        background-size: 220px auto;
+        width: 220px;
+        height: 70%;
+        margin-top: -20px;
+        background-repeat: no-repeat;
+        background-image: url("/images/material/icon/image-02.png");
+      }
+      &__ul {
+        padding: 16px;
+        overflow: hidden;
+        line-height: 1.5;
+        font-size: 16px;
+        text-align: left;
+        &__title {
+          @include details;
+        }  
+      p {
+        font-size: 10px;
+        text-align: left;
+        color: gray;
+      }
+      }
+    }
+    &__3 {
+      @include white-box;
+      &__img {
+        background-size: 220px auto;
+        width: 220px;
+        height: 70%;
+        margin-top: -20px;
+        background-repeat: no-repeat;
+        background-image: url("/images/material/icon/image-03.png");
+      }
+    &__ul {
+      padding: 16px;
+      overflow: hidden;
+      line-height: 1.5;
+      font-size: 16px;
+      text-align: left;
+      &__title {
+        @include details;
+      }  
+    p {
+      font-size: 10px;
+      text-align: left;
+      color: gray;
+    }
+    }
+    }
+  }
+}
+
+&__brands {
+  margin-top: 100px;
+  @include black-font;
+  p {
+    @include blue-font;
+  }
+  &__box {
+    padding-bottom: 100px;
+    width: 780px;
+    margin: 26px auto;
+    display: flex;
+    justify-content: space-around;
+    &__1 {
+      @include white-box;
+      &__img {
+        background-size: 220px auto;
+        width: 220px;
+        height: 70%;
+        margin-top: -20px;
+        background-repeat: no-repeat;
+        background-image: url("/images/material/icon/image-01.png");
+      }
+      &__ul {
+        padding: 16px;
+        overflow: hidden;
+        line-height: 1.5;
+        font-size: 16px;
+        text-align: left;
+        &__title {
+          @include details;
+        }  
+      p {
+        font-size: 10px;
+        text-align: left;
+        color: gray;
+      }
+      }
+  }
+  &__2 {
+    @include white-box;
+    &__img {
+      background-size: 220px auto;
+      width: 220px;
+      height: 70%;
+      margin-top: -20px;
+      background-repeat: no-repeat;
+      background-image: url("/images/material/icon/image-02.png");
+    }
+    &__ul {
+      padding: 16px;
+      overflow: hidden;
+      line-height: 1.5;
+      font-size: 16px;
+      text-align: left;
+      &__title {
+        @include details;
+      }  
+    p {
+      font-size: 10px;
+      text-align: left;
+      color: gray;
+    }
+    }
+  }
+  &__3 {
+    @include white-box;
+    &__img {
+      background-size: 220px auto;
+      width: 220px;
+      height: 70%;
+      margin-top: -20px;
+      background-repeat: no-repeat;
+      background-image: url("/images/material/icon/image-03.png");
+    }
+  &__ul {
+    padding: 16px;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+    &__title {
+      @include details;
+    }  
+  p {
+    font-size: 10px;
+    text-align: left;
+    color: gray;
+  }
+  }
+  }
+  }
+}
+}
+
+.low-content {
+  background-image: url("/images/material/pict/bg-appBanner-pict.jpg");
+  background-repeat: no-repeat;
+  padding: 100px 40px;
+  background-size: cover;
+  background-position: center;
+  color: $white;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  h2 {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  &__img {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding-top: 10px;
+    &__1 {
+      @include ios;
+    }
+    &__2 {
+      margin-left: 10px;
+      @include and;
+    }
+  }  
+}
+
+//フッター部分
+.footer {
+  padding: 60px 0;
+  background-color: #272727;
+  text-align: center;
+  align-items: center;
+  &__content {
+    display: flex;
+    margin: 5px auto;
+    width: 840px;
+    color: $white;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;  
+    &__left {
+      p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      list-style: none;
+      width: calc(1 / 3 * 100%);
+      margin: 0 0 20px;
+    }
+    &__center {
+      p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      list-style: none;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+      color: $white;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;  
+    }
+    &__right {
+      p {
+        font-size: 16px;
+        font-weight: bold;     
+        margin-bottom: 10px; 
+      }
+      list-style: none;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+      color: $white;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;  
+    }
+  }
+  &__logo {
+    margin: 5px auto;
+    width: 150px;
+    height: 40px;
+    vertical-align: bottom;
+    background-image: url("/images/material/logo/logo-white.png");
+    background-size: 140px auto;
+    background-repeat: no-repeat;
+  }
+  &__copyright {
+    font-size: 14px;
+    color: $white;
+  }
+}
