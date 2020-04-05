@@ -1,3 +1,7 @@
+//共有部分
+$white: #fff;
+$skyblue: #38AEF0;
+
 //mixin記述
 //ぼかし文字 白
 @mixin font-shadow($color: white) {
@@ -681,4 +685,4 @@ height: 50px;
     font-size: 14px;
     color: $white;
   }
-}
+} 
