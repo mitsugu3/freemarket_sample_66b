@@ -1,0 +1,203 @@
+.header{
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  max-width: 1040px;
+  &__box {
+    &__logo {
+      vertical-align: bottom;
+      background-repeat: no-repeat;
+      background-image: url("/images/material/logo/logo.png");
+    }
+    &__input {
+      width: calc(100% - 26px);
+      height: 36px;
+      padding: 0 0 0 5px;
+    }
+  }
+  &__nav { 
+    &__list-left {
+    font-size: 14px;
+      display: flex;
+    }  
+    &__list-right {
+      display: flex;
+    } 
+  }  
+}
+
+.main {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 60px;
+  line-height: 1.2;
+  color: #fff;
+  width: 100%;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  padding: 0 120px;
+  background-image: url("/images/material/pict/bg-mainVisual-pict_pc.jpg");
+  &__sub {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+  &__app-button {
+    margin-right: 10px;
+    } 
+    &__ios {
+    background-image: url("/images/material/icon/banner_android.svg");
+
+    }
+    &__and {
+    background-image: url("/images/material/icon/banner_ios.svg");
+    }
+  }
+}
+
+.introduct {
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+  &__border {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+  &__list {
+    text-align: center;
+    display: flex;
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    margin: 0 0 0 2px;
+  }
+}
+
+.middle {
+  background-position: bottom right;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.4;
+  background-image: url("/images/material/pict/bg-topMiddleDl-pict.jpg");
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.features {
+  height: 500px;
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+  &__list {
+    display: flex;
+  }
+}
+
+.pickup__categories {
+  padding: 80px 0 0;
+  text-align: center;
+  background-color: #f8f8f8;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: bold;
+  height: 500px;
+  &__box1 {
+
+  }
+  &__box2 {
+
+  }
+}
+
+.low-content {
+  background-image: url("/images/material/pict/bg-appBanner-pict.jpg");
+  background-repeat: no-repeat;
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+.footer {
+  text-align: center;
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  &__content {
+    display: flex;
+    max-width: 840px;
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    margin: 0 2% 0 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;  
+    &__left {
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &__center {
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;  
+    }
+    &__right {
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;  
+    }
+  }
+  &__logo {
+    max-width: 160px;
+    vertical-align: bottom;
+    background-image: url("/images/material/logo/logo-white.png");
+  }
+  &__copyright {
+    font-size: 14px;
+  }
+}
