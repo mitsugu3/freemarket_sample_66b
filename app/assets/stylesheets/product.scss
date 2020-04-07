@@ -31,12 +31,12 @@ body {
 
 
 
-.item-photo {  
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 375px;
-    background-color: skyblue;
-}
+// .item-photo {  
+//     min-width: 300px;
+//     max-width: 300px;
+//     min-height: 375px;
+//     background-color: skyblue;
+// }
 
 .item-data {
      max-width: 300px;
@@ -59,6 +59,24 @@ td {
     border: 1px solid #ffffff;
     background-color: #ffffff;
 }
+
+.fa-smile-beam {
+    color: #ef5185;
+}
+
+.fa-meh {
+    color: #fba933;
+}
+
+.fa-frown {
+    color: #6ab5d8;
+}
+
+
+
+
+
+
 
 .price-box {
     width: 620px;
@@ -142,22 +160,55 @@ td {
     width: 700px;
     height: 14px;
     margin: 24px auto 0;
+    display: flex;
+    justify-content: space-around;
+
 }
+
+.item-link-light {
+    font-size: 16px;
+}
+
+.item-link-left {
+    font-size: 16px;
+}
+    
 
 
 
 
 .media-box {
     margin: 24px auto;
-    padding: 32px 0 24px;
+    padding: 65px 0 24px;
     width: 780px;
     height: 100px;
     background: #fff;
 }
 
 
+.media-icons {
+    text-align: center;
+    letter-spacing:5px;
+    font-size: 45px;
+
+}
 
 
+.fa-facebook {
+    color: #385185;
+}
+
+.fa-twitter {
+    color: #5d9dc9;
+}
+
+.fa-line {
+    color: #00c137;
+}
+
+.fa-pinterest {
+    color: #aa262a;
+}
 
 
 /* カードリスト */
