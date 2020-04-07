@@ -103,16 +103,16 @@ $boxsolid: #ccc;
         border-top: 1px solid #ddd;
       }
     }
-    #drop_box {
+    .drop_box {
       @include upload;
     }
-    #drop_box_a {
+    .drop_box_a {
       @include upload;
     }
-    #drop_box_b {
+    .drop_box_b {
       @include upload;
     }
-    #drop_box_c{
+    .drop_box_c{
       @include upload;
     }
   }
