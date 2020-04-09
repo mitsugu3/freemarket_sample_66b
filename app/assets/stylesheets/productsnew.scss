@@ -1,0 +1,178 @@
+// color-import
+$furimagreen: #3CCACE;
+$baseColor: #fff;
+$solidcolor: #f5f5f5;
+$boxsolid: #ccc;
+
+// 入力フォーム-mixin
+@mixin form{
+  border: 1px solid $boxsolid;
+  background: $baseColor;
+  line-height: 1.5;
+}
+
+// 出品・戻るボタン-mixin
+@mixin btm{
+  color: $baseColor;
+  display: block;
+  width: 45%;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+// 画像保存-mixin
+@mixin upload{
+  position: relative;
+  height: 30px;
+  padding: 70px 0;
+  background-color: #f5f5f5;
+  border: 1px dashed $boxsolid;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px;
+  background-image: image-url('material/camera.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+//ヘッダーロゴ
+.header__box{
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 700px;
+  background-image: image-url('material/logo/logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+//出品フォーマット
+.products-new {
+  width: 800px;
+  margin: 0 auto;
+  background-color: $baseColor;
+  font-family: Arial;
+  &__form {
+    padding: 20px 40px 40px 40px;
+    position: relative;
+    border: 1px solid $solidcolor;
+    &__comment {
+      font-size: 12px;
+    }
+    &__box {
+      width: 100%;
+      margin-bottom: 25px;
+      &__text_field {
+        @include form;
+        height: 30px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: $boxsolid;
+      }
+      &__text_detail {
+        @include form;
+        height: 100px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: $boxsolid;
+      }
+    }
+    .drop_area {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &__image_box {
+        width: 114px;
+        margin-right: 10px;
+      }
+      .delete_link {
+        text-align: center;
+        line-height: 2.5;
+        display: block;
+        height: 25%;
+        color: #0099e8;
+        background-color: $solidcolor;
+        border-top: 1px solid #ddd;
+      }
+    }
+    .drop_box {
+      @include upload;
+    }
+    .drop_box_a {
+      @include upload;
+    }
+    .drop_box_b {
+      @include upload;
+    }
+    .drop_box_c{
+      @include upload;
+    }
+  }
+  &__select {
+    padding: 20px 40px 40px 40px;
+    position: relative;
+    border: 1px solid $solidcolor;
+    &__box {
+      width: 400px;
+      margin: 0 0 25px auto;
+      &__category {
+        @include form;
+        height: 15px;
+        padding: 10px 16px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__prices {
+    padding: 20px 40px 40px 40px;
+    position: relative;
+    border: 1px solid $solidcolor;
+    &__box {
+      width: 400px;
+      margin: 0 0 25px auto;
+      &__text {
+        @include form;
+        height: 15px;
+        padding: 10px 16px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        color: $boxsolid;
+      }
+    }
+  }
+  span {
+    background: $furimagreen;
+    margin: 0 0 8px 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: $baseColor;
+    font-size: 12px;
+  }
+  &__last {
+    font-size: 11px;
+    padding: 20px 40px 40px 40px;
+    position: relative;
+    &__btm_create {
+      @include btm;
+      background: $furimagreen;
+      border: 1px solid $furimagreen;
+    } 
+    &__btm_back {
+      @include btm;
+      background: #aaa;
+      border: 1px solid #aaa;
+      margin-bottom: 60px;
+    }
+  }
+}
