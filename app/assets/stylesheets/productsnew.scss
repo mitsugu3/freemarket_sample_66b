@@ -23,7 +23,7 @@ $boxsolid: #ccc;
   margin: 0 auto;
 }
 
-// 画像保存 //
+// 画像保存-mixin
 @mixin upload{
   position: relative;
   height: 30px;
