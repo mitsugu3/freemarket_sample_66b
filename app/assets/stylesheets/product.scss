@@ -14,8 +14,6 @@ body {
     padding: 24px 40px;
  }
 
- 
-
  .item-name {
     font-size: 24px;
     text-align: center;
@@ -28,8 +26,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
-
 
 // .item-photo {  
 //     min-width: 300px;
@@ -72,12 +68,6 @@ td {
     color: #6ab5d8;
 }
 
-
-
-
-
-
-
 .price-box {
     width: 620px;
     height: 50px;
@@ -87,8 +77,6 @@ td {
     font-size: 50px;
     font-weight: 600;  
 }
-
-
 
 .item-buy-btn {
     display: block;
@@ -108,22 +96,13 @@ td {
     font-size: 18px;
 }
 
-
-
-
-
-
-
-
 .item-comment {
     width: 700px;
     height: 262px;
     background-color: #ffffff;
     margin: auto;
     margin-top: 8px;  
-    padding: 24px 40px
-    
-    
+    padding: 24px 40px    
 }
 
 .comment-messege {
@@ -174,9 +153,6 @@ td {
 }
     
 
-
-
-
 .media-box {
     margin: 24px auto;
     padding: 65px 0 24px;
@@ -185,14 +161,11 @@ td {
     background: #fff;
 }
 
-
 .media-icons {
     text-align: center;
     letter-spacing:5px;
     font-size: 45px;
-
 }
-
 
 .fa-facebook {
     color: #385185;
@@ -209,7 +182,6 @@ td {
 .fa-pinterest {
     color: #aa262a;
 }
-
 
 /* カードリスト */
 
