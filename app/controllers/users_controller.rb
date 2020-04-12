@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
   end
-  def menu
+  def signupmean
   end
 
 end

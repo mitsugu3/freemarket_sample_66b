@@ -1,5 +1,5 @@
 
-%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+%link{ :href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet" }/
 .signin-container
   .signin-header
     = render partial: 'shared/signup_header'
@@ -10,10 +10,8 @@
         アカウントをお持ちでない方はこちら
         = button_to new_user_registration_path, method: :get, class: "signin-main__menu_signup_btn" do
           新規会員登録
-            
         = link_to class: "signin-main__menu_signup_forget" do
           パスワードをお忘れの方
-
 
       .signin-main__menu_facebook
         = button_to new_user_registration_path, method: :get, class: "signin-main__menu_facebook_btn" do
@@ -37,10 +35,8 @@
           .field
             = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: 'signin_text_field'
 
-        .signin-main__menu_login_action  
+        .signin-main__menu_login_action
           = button_to new_user_registration_path, method: :get, class: "signin-main__menu_login_action_btn" do
             ログイン
-
-
   .signin-footer
     = render partial: 'shared/signup_footer'

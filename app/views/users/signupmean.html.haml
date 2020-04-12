@@ -1,4 +1,4 @@
-%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+%link{ :href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet" }/
 
 /新規登録方法選択画面
 .signupmean-container
@@ -26,9 +26,5 @@
           = button_to new_user_registration_path, method: :get, class: "signupmean-main__menu_list_google_btn" do
             %i.fab.fa-google
             Googleで登録
-
-      
-
-
   .signupmean-footer
     = render partial: 'shared/signup_footer'

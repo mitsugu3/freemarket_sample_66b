@@ -23,13 +23,11 @@
             %span.must 必須
             %br/
             = f.email_field :nickname, autocomplete: "nickname", placeholder: "例）フリマさん", class: 'signup_text_field'
-            
           .field
             = f.label :パスワード（英数字7文字以上）
             - if @minimum_password_length
               %em
               %span.must 必須
-
             %br/
             = f.password_field :password, autocomplete: "new-password", placeholder: "例）abc1234", class: 'signup_text_field'
           .field
@@ -67,11 +65,5 @@
             = f.text_field :phonenumber, autocomplete: "phonenumber", placeholder: "例）123-4567-7890", class: 'signup_text_field'
           .actions_signup
             = f.submit "登録", class: 'signupbtn'
-
-
-
-
-  
-
   .signup-footer
     = render partial: 'shared/signup_footer'
