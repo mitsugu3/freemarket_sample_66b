@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20200328053121) do
     t.string   "password",                            null: false
     t.string   "last_name",                           null: false
     t.string   "first_name",                          null: false
+    t.string   "last_kana",                           null: false
+    t.string   "first_kana",                          null: false
+    t.integer  "phonenumber",                         null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

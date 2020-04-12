@@ -1,10 +1,16 @@
 .signup-footer{
-  height: 100px;
+  height: 5vw;
+  width: 100vw;
   background-color:#272727;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  clear: both;
+
+  
 
   &_text{
     font-size: 12px;

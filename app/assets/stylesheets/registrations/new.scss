@@ -1,0 +1,106 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.signup-container{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  position: relative;
+  .sihnup-header{}
+
+  .signup-main{
+    height: calc(100% - 200px);
+    margin-top: 20px;
+    background-color:#f8f8f8;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    
+    &__menu{
+      height: 100%;
+      width: 700px;
+      background-color: #fff;
+      &_text{
+        text-align: center;
+        font-size: 22px;
+        padding: 32px;
+        border-bottom: 0.1px rgb(245, 245, 245) solid ;
+      }
+      &_info{
+        width: 100%;
+        padding: 10px 150px;
+        .field{
+          line-height: 40px;
+          .signup_text_field{
+            width: 100%;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border: 1px solid #ccc;
+            line-height: 1.5;
+            font-size: 15px;
+            border-radius: 4px;
+            font-style: inherit;
+          }
+        }
+      }
+      .field_group{
+        padding: 10px 0px;
+        list-style: none;
+        &_left{
+          float: left;
+          margin-right: 50px;
+          .signup_text_field_split{
+            width: 175px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border: 1px solid #ccc;
+            line-height: 1.5;
+            font-size: 15px;
+          }
+        }
+        &_right{
+          .signup_text_field_split{
+            width: 175px;
+            height: 48px;
+            border: 1px solid #ccc;
+            line-height: 1.5;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+          .actions_signup{
+            margin-top: 50px;
+            .signupbtn{
+              width: 100%;
+              height: 60px;
+              background-color: #3CCACE;
+              display: inline-block;
+              color: #fff;
+              font-size: 25px;
+              line-height: 1em;
+              transition: .3s;
+
+
+            }
+    
+  }
+  }
+
+
+.hidden{
+  display: none;
+}
+
+
+.must {
+  background-color: #ff1a00;
+  color: #FFF;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  letter-spacing: 0.2em;
+
+}
