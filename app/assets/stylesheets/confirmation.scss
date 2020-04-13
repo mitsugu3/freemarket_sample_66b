@@ -1,0 +1,267 @@
+//共有部分
+$white: #fff;
+$skyblue: #38AEF0;
+
+//mixin記述
+//ぼかし文字 白
+@mixin font-shadow($color: white) {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  font-size: 60px;
+  line-height: 1.2;
+  color: white;
+}
+
+//ios
+@mixin ios {
+  width: 180px;
+  height: 55px;
+  background-size: 180px auto;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/icon/banner_ios.svg");
+}
+
+//android
+@mixin and {
+  width: 180px;
+  height: 55px;
+  background-size: 180px auto;
+  background-repeat: no-repeat;
+  background-image: url("/images/material/icon/banner_android.svg");
+  }
+
+//黒太文字
+@mixin black-font {
+  font-size: 28px;
+  line-height: 1.4;
+  text-align: center;
+  color: black;
+  font-weight: bold;  
+}
+
+//黒中文字
+@mixin black-middle-font {
+  font-size: 24px;
+  font-weight: bold;
+  font-size: 17px;
+  padding-bottom: 20px;
+}
+
+//黒小文字
+@mixin black-small-font {
+  font-size: 17px;
+  color: black;
+}
+
+//水色文字
+@mixin blue-font {
+  margin: 5px auto;
+  font-size: 24px;
+  text-decoration: none;
+  color: #3CCACE;
+  }
+
+//ボーダー
+@mixin border {
+  margin: 15px auto;
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;  
+}
+
+//水色ボックス
+@mixin number-box {
+margin-left: -40px;
+text-align: center;
+background-color: #3CCACE;
+width: 50px;
+height: 50px;
+}    
+
+//商品ボックス
+@mixin white-box {
+  width: 220px;
+  height: 245px;
+  background-color: white;
+}    
+
+//商品詳細
+@mixin details {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+  margin-right: 30px;  
+}    
+
+//ここまで
+
+//トップロゴ
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding-top: 50px;
+  &__logo {
+    margin: 10px 760px;
+    width: 200px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-image: url("/images/material/logo/logo.png");
+    background-size: 140px auto;
+  }
+}
+
+//詳細
+.contents {
+  height: 1000px;
+  width: 100%;
+  background-color: #f8f8f8;
+  &__box {
+    margin: 0px auto;
+    background-color: white;
+    width: 700px;
+    height: 800px;
+    &__title {
+      text-align: center;
+      padding-top: 40px;
+      font-size: 22px;
+      font-style: bold;
+    }  
+    &__border {
+      margin: 20px auto;
+      width: 650px;
+      height: 2px;
+      background-color: #f8f8f8;
+    }
+    &__item-box {
+      width: 300px;
+      height: 80px;
+      margin: 50px auto;
+      display: flex;
+      &__image {
+        width: 80px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-image: url("/images/material/icon/item.jpg");
+        background-size: 80px auto;
+      }
+      &__title {
+        margin-left: 30px;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__money {
+      width: 300px;
+      height: 80px;
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      &__title {
+
+      }
+      &__price {
+
+      }
+    }
+
+    &__payment {
+      width: 300px;
+      height: 80px;
+      margin: 10px auto;
+      &__block {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        &__title {
+
+        }
+        &__chg {
+          font-size: 14px;
+          color: #3CCACE;
+        }
+      }
+      &__list {
+        margin-top: 10px;
+       li {
+         font-size: 12px;
+       }
+      } 
+    }
+
+    &__delivery {
+      width: 300px;
+      height: 80px;
+      margin: 30px auto;
+      &__block {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        &__title {
+
+        }
+        &__chg {
+          font-size: 14px;
+          color: #3CCACE;
+        }
+      }
+      &__list {
+        margin-top: 10px;
+       li {
+         font-size: 12px;
+       }
+      } 
+    }
+
+    &__buy-button {
+      background-color: #3CCACE;
+      width: 200px;
+      height: 50px;
+      margin: 100px auto;
+      p {
+        padding-top: 12px;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+}
+
+//フッター部分
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: #272727;
+  text-align: center;
+  &__contents {
+    padding-top: 30px;
+    margin: 10px auto;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 14px;
+    li {
+      list-style: none;
+      padding-left: 10px;
+    }
+  }
+  &__logo {
+    margin: 30px auto;
+    width: 150px;
+    height: 40px;
+    vertical-align: bottom;
+    background-image: url("/images/material/logo/logo-white.png");
+    background-size: 140px auto;
+    background-repeat: no-repeat;
+  }
+  &__copyright {
+    margin: 10px auto;
+    font-size: 14px;
+    color: $white;
+  }
+} 
