@@ -242,9 +242,9 @@ background-repeat: no-repeat;
     box-shadow: 0 4px 15px rgba(0,0,0,.2)
     
     
-  }
   
-  .card-left__imgframe{
+  
+  &__imgframe{
     width: 100%;
     height: auto;
     padding-top: 56.25%;
@@ -252,7 +252,7 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-left__textbox{
+  &__textbox{
     width: 100%;
     height: auto;
     padding: 20px 18px;
@@ -260,22 +260,22 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-left__textbox > * + *{
+  &__textbox > * + *{
     margin-top: 10px;
   }
   
-  .card-left__titletext{
+  &__titletext{
     font-size: 20px;
     font-weight: bold;
     line-height: 125%;
   }
   
-  .card-left__overviewtext{
+  &__overviewtext{
     font-size: 12px;
     line-height: 150%;
   }
 
-
+  }
 
   .card-center{
     width: 288px;
@@ -283,10 +283,8 @@ background-repeat: no-repeat;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,.2)
-   
-  }
   
-  .card-center__imgframe{
+   &__imgframe{
     width: 100%;
     height: auto;
     padding-top: 56.25%;
@@ -294,7 +292,7 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-center__textbox{
+  &__textbox{
     width: 100%;
     height: auto;
     padding: 20px 18px;
@@ -302,22 +300,22 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-center__textbox > * + *{
+  &__textbox > * + *{
     margin-top: 10px;
   }
   
-  .card-center__titletext{
+  &__titletext{
     font-size: 20px;
     font-weight: bold;
     line-height: 125%;
   }
   
-  .card-center__overviewtext{
+  &__overviewtext{
     font-size: 12px;
     line-height: 150%;
   }
 
-
+  }
 
   .card-light{
     width: 288px;
@@ -326,9 +324,8 @@ background-repeat: no-repeat;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,.2)
     
-  }
   
-  .card-light__imgframe{
+  &__imgframe{
     width: 100%;
     height: auto;
     padding-top: 56.25%;
@@ -336,7 +333,7 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-light__textbox{
+  &__textbox{
     width: 100%;
     height: auto;
     padding: 20px 18px;
@@ -344,21 +341,21 @@ background-repeat: no-repeat;
     box-sizing: border-box;
   }
   
-  .card-light__textbox > * + *{
+  &__textbox > * + *{
     margin-top: 10px;
   }
   
-  .card-light__titletext{
+  &__titletext{
     font-size: 20px;
     font-weight: bold;
     line-height: 125%;
   }
   
-  .card-light__overviewtext{
+  &__overviewtext{
     font-size: 12px;
     line-height: 150%;
   }
-
+  }
 
   .card-section-item-second{
     display: flex;
