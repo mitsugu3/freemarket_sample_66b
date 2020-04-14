@@ -100,7 +100,6 @@
         .mypage-user__icon
           = image_tag "noimage.png", class:"mypage-user__icon"
         %h2.mypage-user__name
-          -# = @user.nickname 
           しゅうじ
         .mypage-user__info
           評価  0  出品数  0
@@ -114,13 +113,13 @@
         .information-list__logo
 
         .information-list__body
-          %li 
+          %li.information-list__body__item
             《本日開始》全国16,600店のファミリーマートにてコード決済が使えるようになりました
             %i.fa.fa-chevron-right
-          %li 
+          %li.information-list__body__item
             《本日開始》全国16,600店のファミリーマートにてコード決済が使えるようになりました
             %i.fa.fa-chevron-right
-          %li 
+          %li.information-list__body__item
             《本日開始》全国16,600店のファミリーマートにてコード決済が使えるようになりました
             %i.fa.fa-chevron-right
         .information-list__footer
