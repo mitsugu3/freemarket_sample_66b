@@ -94,7 +94,6 @@
     font-size: 18px;
  }
 
-
  .item-comment {
     width: 700px;
     height: 262px;
@@ -209,16 +208,12 @@
     width: auto;
  }
 
-
   .card-left{
     width: 288px;
     height: auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,.2)
-    
-    
-  
   
   &__imgframe{
     width: 100%;
@@ -300,7 +295,6 @@
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,.2)
     
-  
   &__imgframe{
     width: 100%;
     height: auto;
@@ -349,8 +343,8 @@
   }
 
   .card-section-item-second{
-  display: flex;
-  justify-content: space-around;
-  margin: 24px 24px;
-  width: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: 24px 24px;
+    width: auto;
   }
