@@ -3,99 +3,100 @@
     %nav.mypage-nav
       %ul.mypage-nav__list
         %li.active
-          マイページ
-          %i.fa.fa-chevron-right
+          = link_to "#", class: "mypage-nav__list__item" do
+            マイページ
+            %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             お知らせ
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             やることリスト
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             いいね！一覧
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             出品する
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             下書き一覧
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             出品した商品-出品中
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             出品した商品-取引中
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             出品した商品-売却済み
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             購入した商品-取引中
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             購入した商品-過去の取引
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             ニュース一覧
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             評価一覧
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             ガイド
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__list__item" do
+          = link_to "#", class: "mypage-nav__list__item" do
             お問い合わせ
             %i.fa.fa-chevron-right
       %h3.mypage-nav__head
         設定
       %ul.mypage-nav__setting
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             プロフィール
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             発送元・お届け先住所変更
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             支払い方法
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             メール/パスワード
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             本人情報
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             電話番号の確認
             %i.fa.fa-chevron-right
         %li
-          =link_to "#", class: "mypage-nav__setting__item" do
+          = link_to "#", class: "mypage-nav__setting__item" do
             ログアウト
             %i.fa.fa-chevron-right
 
   .main-content
     %section.mypage-user
-      =link_to "#", class: "mypage-user__link" do
+      = link_to "#", class: "mypage-user__link" do
         .mypage-user__icon
           = image_tag "noimage.png", class:"mypage-user__icon"
         %h2.mypage-user__name
@@ -109,10 +110,10 @@
           お知らせ
         %li
           やることリスト
-      %ul.infomation-list
-        .infomation-list__logo
+      %ul.information-list
+        .information-list__logo
 
-        .infomation-list__body
+        .information-list__body
           %li 
             《本日開始》全国16,600店のファミリーマートにてコード決済が使えるようになりました
             %i.fa.fa-chevron-right
@@ -122,8 +123,8 @@
           %li 
             《本日開始》全国16,600店のファミリーマートにてコード決済が使えるようになりました
             %i.fa.fa-chevron-right
-        .infomation-list__footer
-          =link_to "#", class: "infomation-list__footer__btn" do
+        .information-list__footer
+          = link_to "#", class: "information-list__footer__btn" do
             一覧を見る
     .mypage-products
       %h2.mypage-products__head
