@@ -1,24 +1,28 @@
+//出品するボタン
+.scroll_button
+
+//ヘッダー
 .header 
-  .header_box
+  .header__box
     .header__box__logo
-      ロゴ
-    .header__box___input
-      検索ボックス
+    .header__box__input
+      %p キーワードから探す
+      .header__box__input__square
+        .header__box__input__square__img 
   .header__nav
-    %ul.header__nav__list-right
+    %ul.right
       %li
         カテゴリ
       %li
         ブランド
-    %ul.header__nav__list-left
+    %ul.left
       %li
         = link_to "ログイン", new_user_session_path, class: 'post'
       %li
         = link_to "新規登録方法", users_menu_path, class: 'post'
 
 .main
-  %h2
-    人生を変えるフリマアプリ
+  %p 人生を変えるフリマアプリ
   .main__sub
     FURIMAはだれでもかんたんに出品・購入できる 
     %br
@@ -30,66 +34,128 @@
 .introduct
   FURIMAが選ばれる3つの理由
   .introduct__border
+  .introduct__picture
+    .introduct__picture__1
+      .introduct__picture__1__number
+        %p 1
+    .introduct__picture__2
+      .introduct__picture__2__number
+        %p 2
+    .introduct__picture__3
+      .introduct__picture__3__number 
+        %p 3
   %ul.introduct__list
-    %li
-      %h3
-      3分ですぐに出品
-      スマホで入力するだけで簡単に出品できる！
-    %li
-      %h3
-      シンプル で使いやすい
-      めんどくさい入力は必要なく、検索も購入もスムーズ！
-    %li
-      %h3
-      手数料 業界最安
-      最大3%でお得に出品&購入！
+    %li.introduct__list__1
+      3分で 
+      %span すぐに出品
+      %p スマホで入力するだけで簡単に出品できる！
+    %li.introduct__list__2 
+      %span シンプル
+      で使いやすい
+      %p めんどくさい入力は必要なく、検索も購入もスムーズ！
+    %li.introduct__list__3 
+      手数料
+      %span 業界最安
+      %p 最大3%でお得に出品&購入！
 
 .middle
-  会員数日本一位
+  %p 会員数日本一位
   %br
   FURIMAは、フリマアプリで最も人気。  
   %br
   出品・購入回数も業界最多です！
   %br
   ほしかったあの商品に出会えるかもしれません。
+  .middle__image
+    .middle__image__1
+    .middle__image__2
 
 .features
-  %h2
+  .features__title
     FURIMAの特徴
-  %ul.features__list
-    %li
-      簡単に売り買いできる
-      スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-    %li
-      売上金は即日振込みに対応
-      午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-    %li
-      様々な支払いに対応
-      お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    .features__title__border
+  %ul.features__title__list
+    %li.features__title__list__1
+      %h3 簡単に売り買いできる
+      %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+    %li.features__title__list__2
+      %h3 売上金は即日振込みに対応
+      %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+    %li.features__title__list__3
+      %h3 様々な支払いに対応
+      %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-.pickup__categories
-  .pickup__categories__box1
-    %h2
-      ピックアップカテゴリ
-    %h3
-      新規投稿商品
-  .pickup__categories__box2
-    %h2
-      ピックアップカテゴリ
-    %h3
-      アーカイバ
+.pickup-list
+  .pickup-list__title
+    ピックアップカテゴリー
+    %p 新規投稿商品
+  .pickup-list__title__box    
+    .pickup-list__title__box__1
+      .pickup-list__title__box__1__img
+      .pickup-list__title__box__1__ul
+        pruduct3
+        %ul.pickup-list__title__box__1__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）
+    .pickup-list__title__box__2
+      .pickup-list__title__box__2__img
+      .pickup-list__title__box__2__ul
+        pruduct3
+        %ul.pickup-list__title__box__2__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）
+    .pickup-list__title__box__3
+      .pickup-list__title__box__3__img
+      .pickup-list__title__box__3__ul
+        pruduct3
+        %ul.pickup-list__title__box__3__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）              
+
+  .pickup-list__brands
+    ピックアップブランド
+    %p アーカイバ
+  .pickup-list__brands__box    
+    .pickup-list__brands__box__1
+      .pickup-list__brands__box__1__img
+      .pickup-list__brands__box__1__ul
+        pruduct3
+        %ul.pickup-list__brands__box__1__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）
+    .pickup-list__brands__box__2
+      .pickup-list__brands__box__2__img
+      .pickup-list__brands__box__2__ul
+        pruduct3
+        %ul.pickup-list__brands__box__2__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）
+    .pickup-list__brands__box__3
+      .pickup-list__brands__box__3__img
+      .pickup-list__brands__box__3__ul
+        pruduct3
+        %ul.pickup-list__brands__box__3__ul__title
+          %li 30000円
+          %li ★0
+        %p （税込み）   
 
 .low-content
-  %h2
-    だれでもかんたん、人生を変えるフリマアプリ
-  %h3
-    今すぐ無料ダウンロード！
+  %h2 だれでもかんたん、人生を変えるフリマアプリ
+  %p 今すぐ無料ダウンロード！
+  .low-content__img
+    .low-content__img__1
+    .low-content__img__2
 
 .footer
   .footer__content
     .footer__content__left
-      %h3
-        FURIMAについて
+      %ul
+        %p FURIMAについて
         %li
           会社概要（運営会社）
         %li 
@@ -99,17 +165,15 @@
         %li
           ポイントに関する特約
     .footer__content__center
-      %h3
-        FURIMAについて
-        %li
-          FURIMAを見る
+      %ul
+        %p FURIMAを見る
         %li
           カテゴリー一覧
         %li
           ブランド一覧
     .footer__content__right
-      %h3
-        ヘルプ＆ガイド
+      %ul
+        %p ヘルプ＆ガイド
         %li
           FURIMAガイド
         %li
@@ -119,4 +183,3 @@
   .footer__logo
   .footer__copyright
     © FURIMA
-}
