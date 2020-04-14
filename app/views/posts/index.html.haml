@@ -12,11 +12,9 @@
         ブランド
     %ul.header__nav__list-left
       %li
-        %a(href="../devise/sessions/new.html.haml")
-          ログイン
+        = link_to "ログイン", new_user_session_path, class: 'post'
       %li
-        %a(href="../users/signupmean.html.haml")
-          新規会員登録
+        = link_to "新規登録方法", users_menu_path, class: 'post'
 
 .main
   %h2
