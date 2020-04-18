@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'product/show'
   devise_for :users
   resources :products, :messages
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "messages#index"
+  root "posts#index"
   
 end
