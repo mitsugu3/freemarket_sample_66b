@@ -17,9 +17,9 @@
         ブランド
     %ul.left
       %li
-        ログイン
+        = link_to "ログイン", new_user_session_path, class: 'post'
       %li
-        新規会員登録
+        = link_to "新規登録方法", users_menu_path, class: 'post'
 
 .main
   %p 人生を変えるフリマアプリ
