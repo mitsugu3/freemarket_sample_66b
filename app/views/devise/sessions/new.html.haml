@@ -1,7 +1,7 @@
 
 .signin-container
   .signin-header
-    = render partial: 'shared/signup_header'
+    = render partial: 'users/shared/signup_header'
 
   .signin-main
     .signin-main__menu
@@ -38,4 +38,4 @@
           = button_to new_user_registration_path, method: :get, class: "signin-main__menu_login_action_btn" do
             ログイン
   .signin-footer
-    = render partial: 'shared/signup_footer'
+    = render partial: 'users/shared/signup_footer'

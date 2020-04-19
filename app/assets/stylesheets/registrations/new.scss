@@ -6,8 +6,6 @@
 .signup-container{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   position: relative;
-  .sihnup-header{}
-
   .signup-main{
     height: calc(100% - 200px);
     margin-top: 20px;
@@ -84,12 +82,9 @@
     }
   }
 }
-
-
 .hidden{
   display: none;
 }
-
 
 .must {
   background-color: #ff1a00;
