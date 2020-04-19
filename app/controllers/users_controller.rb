@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
   end
-  def signupmean
+  def show
   end
 
 end
