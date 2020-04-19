@@ -1,6 +1,7 @@
 //出品するボタン
 .scroll_button
-
+  = link_to image_tag("/images/material/icon/icon_camera.png", class: "scroll_button"), productsnew_index_path
+  
 //ヘッダー
 .header 
   .header__box
@@ -19,7 +20,7 @@
       %li
         = link_to "ログイン", new_user_session_path, class: 'post'
       %li
-        = link_to "新規登録方法", users_menu_path, class: 'post'
+        = link_to "新規登録方法", new_user_registration_path, class: 'post'  #registration_pathに変更
 
 .main
   %p 人生を変えるフリマアプリ
