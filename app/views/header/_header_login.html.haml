@@ -1,0 +1,16 @@
+.header 
+  .header__box
+    .header__box__logo
+    .header__box__input
+      %p キーワードから探す
+      .header__box__input__square
+        .header__box__input__square__img 
+  .header__nav
+    %ul.right
+      %li
+        カテゴリ
+      %li
+        ブランド
+    %ul.left
+      %li
+        = link_to "マイページ", new_user_session_path, class: 'post'
