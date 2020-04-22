@@ -13,3 +13,7 @@ module FreemarketSample66b
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+def after_sign_in_path_for(resource) 
+  posts_index_path
+end

@@ -35,7 +35,8 @@
             = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: 'signin_text_field'
 
         .signin-main__menu_login_action
-          = button_to new_user_registration_path, method: :get, class: "signin-main__menu_login_action_btn" do
+          = button_to  posts_index_path, method: :get, class: "signin-main__menu_login_action_btn" do
             ログイン
+
   .signin-footer
     = render partial: 'users/shared/signup_footer'
