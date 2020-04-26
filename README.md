@@ -44,16 +44,18 @@ aaaa
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |name|string|null: false|
+|description|text|null: false| #追加
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |condition|string|null: false|
-|price|integer|null: false|
+|delivery_user|string|null: false| #送料負担
+|delivery_method|string|null: false| #発送方法
 |area|integer|null: false|
-|status|string|null: false|
-|comment|text|null: false|
-|delivery_user|string|null: false|
-|delivery_method|string|null: false|
-|delivery_money|integer|null: false|
+|delivery_days|string|null: false|#追加 発送までの日数
+|price|integer|null: false|
+|status|string|null: false|#削除
+|comment|text|null: false|#削除
+|delivery_money|integer|null: false|#削除
 ### Association
 - belongs_to :cart dependent:destroy
 - belongs_to :category
