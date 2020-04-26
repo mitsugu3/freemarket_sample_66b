@@ -30,7 +30,7 @@
           = devise_error_messages!
 
           .field
-            = f.text_field :nickname, autocomplete: "nickname", placeholder: "メールアドレス", class: 'signin_text_field'
+            = f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: 'signin_text_field'
           .field
             = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: 'signin_text_field'
 
