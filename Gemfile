@@ -73,3 +73,6 @@ group :development, :test do
 end
 
 gem 'erb2haml'
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
