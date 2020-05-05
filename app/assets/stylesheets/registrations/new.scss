@@ -39,6 +39,20 @@
             border-radius: 4px;
             font-style: inherit;
           }
+          .year,.month,.day{
+            margin-top: 5px;
+            -webkit-appearance: none;
+            -moz-appearance: none;          
+            appearance: none;
+            line-height: 1.1em;
+            height: 48px;
+            width: 7rem;
+            font-size: 15px;
+            overflow: hidden;
+            padding: 10px 16px 8px;
+
+          
+          }
         }
       }
       .field_group{

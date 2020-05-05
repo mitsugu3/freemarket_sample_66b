@@ -1,13 +1,13 @@
 /新規登録画面
 .signup-container
   .signup-header
-    = render partial: 'users/shared/signup_header'
+    = render partial: 'signups/shared/signup_header'
 
 
   .signup-main
     .signup-main__menu
       .signup-main__menu_text
-        会員情報入力
+        会員情報
       .signup-main__menu_info
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
@@ -22,7 +22,8 @@
             = f.label :ニックネーム
             %span.must 必須
             %br/
-            = f.email_field :nickname, autocomplete: "nickname", placeholder: "例）フリマさん", class: 'signup_text_field'
+            = f.text_field :nickname, autocomplete: "nickname", placeholder: "例）フリマさん", class: 'signup_text_field'
+            
           .field
             = f.label :パスワード（英数字7文字以上）
             - if @minimum_password_length
@@ -52,18 +53,76 @@
               = f.label :名前カナ
               %span.must 必須
               %br/
-              = f.text_field :first_kana, autocomplete: "first_kana", placeholder: "例）タロウ", class: 'signup_text_field_split'
+              = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例）タロウ", class: 'signup_text_field_split'
             .field_group_right
               = f.label :苗字カナ
               %span.must 必須
               %br/
-              = f.text_field :last_kana, autocomplete: "last_kana", placeholder: "例）ヤマダ", class: 'signup_text_field_split'
+              = f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "例）ヤマダ", class: 'signup_text_field_split'
+
           .field
             = f.label :電話番号
             %span.must 必須
             %br/
-            = f.text_field :phonenumber, autocomplete: "phonenumber", placeholder: "例）123-4567-7890", class: 'signup_text_field'
+            = f.text_field :phone_number, autocomplete: "phone_number", placeholder: "例）123-4567-7890", class: 'signup_text_field'
+          .field
+            = f.label :birthday, "生年月日"
+            %span.must 必須
+            %br/
+            != sprintf(f.date_select(:birthday,with_css_classes:'birth_pulldown', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+
+          .field_group
+            .field_group_left
+              = f.label :送付名前
+              %span.must 必須
+              %br/
+              = f.text_field :address_first_name, autocomplete: "address_first_name", placeholder: "例）太郎", class: 'signup_text_field_split'
+            .field_group_right
+              = f.label :送付苗字
+              %span.must 必須
+              %br/
+              = f.text_field :address_last_name, autocomplete: "address_last_name", placeholder: "例）山田", class: 'signup_text_field_split'
+          .field_group
+            .field_group_left
+              = f.label :送付名前カナ
+              %span.must 必須
+              %br/
+              = f.text_field :address_first_name_kana, autocomplete: "address_first_name_kana", placeholder: "例）タロウ", class: 'signup_text_field_split'
+            .field_group_right
+              = f.label :送付苗字カナ
+              %span.must 必須
+              %br/
+              = f.text_field :address_last_name_kana, autocomplete: "address_last_name_kana", placeholder: "例）ヤマダ", class: 'signup_text_field_split'
+          .field
+            = f.label :郵便番号
+            %span.must 必須
+            %br/
+            = f.text_field :address_post, autocomplete: "address_post", placeholder: "000-0000", class: 'signup_text_field'              
+              
+          .field
+            = f.label :住所（都道府県）
+            %span.must 必須
+            %br/
+            = f.text_field :address_prefecture, autocomplete: "address_prefecture", placeholder: "例）東京都", class: 'signup_text_field'
+          .field
+            = f.label :住所（市町村）
+            %span.must 必須
+            %br/
+            = f.text_field :address_block, autocomplete: "address_block", placeholder: "例）新宿区", class: 'signup_text_field'
+          .field
+            = f.label :住所（番地）
+            %span.must 必須
+            %br/
+            = f.text_field :address_number, autocomplete: "address_number", placeholder: "1-23-4", class: 'signup_text_field'
+          .field
+            = f.label :住所（マンション、号室）
+            %br/
+            = f.text_field :address_building, autocomplete: "address_building", placeholder: "フリママンション 123号室", class: 'signup_text_field'
+          .field
+            = f.label :送付先電話番号
+            %br/
+            = f.text_field :address_phone_number, autocomplete: "address_phone_number", placeholder: "例）123-4567-7890", class: 'signup_text_field'
           .actions_signup
             = f.submit "登録", class: 'signupbtn'
   .signup-footer
-    = render partial: 'users/shared/signup_footer'
+    = render partial: 'signups/shared/signup_footer'

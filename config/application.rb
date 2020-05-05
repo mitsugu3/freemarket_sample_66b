@@ -13,3 +13,9 @@ module FreemarketSample66b
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+module Dansyalist
+  class Application < Rails::Application
+    config.i18n.default_locale = :ja
+  end
+end
+
