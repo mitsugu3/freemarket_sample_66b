@@ -205,3 +205,25 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード確認用
+        email: メールアドレス
+        last_name: 名前
+        first_name: 苗字
+        last_name_kana: 名前かな
+        first_name_kana: 苗字かな
+        nickname: ニックネーム
+        phone_number: 電話番号
+        birthday: 生年月日
+        address_post: 郵便番号
+        address_first_name: 送付名前
+        address_last_name: 送付苗字
+        address_last_name_kana: 送付名前かな
+        address_first_name_kana: 送付苗字かな
+        address_number: 郵便番号
+        address_prefecture: 都道府県
+        address_block: 市町村
