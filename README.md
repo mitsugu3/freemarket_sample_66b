@@ -44,16 +44,15 @@ aaaa
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |name|string|null: false|
+|description|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |condition|string|null: false|
-|price|integer|null: false|
-|area|integer|null: false|
-|status|string|null: false|
-|comment|text|null: false|
 |delivery_user|string|null: false|
 |delivery_method|string|null: false|
-|delivery_money|integer|null: false|
+|area|integer|null: false|
+|delivery_days|string|null: false|
+|price|integer|null: false|
 ### Association
 - belongs_to :cart dependent:destroy
 - belongs_to :category
