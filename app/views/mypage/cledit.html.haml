@@ -90,8 +90,8 @@
             電話番号の確認
             %i.fa.fa-chevron-right
         %li
-          = link_to "#", class: "mypage-nav__setting__item" do
-            ログアウト
+          = link_to "posts_index_path", class: "mypage-nav__setting__item" do
+            トップページへ戻る
             %i.fa.fa-chevron-right
 
   .cledit-content
@@ -99,5 +99,5 @@
       支払い方法
     .cledit-content__main
       %h2 クレジットカード一覧
-      = link_to "#", class: "cledit-content__main__btn" do
+      = link_to "mypage_credit_path", class: "cledit-content__main__btn" do
         クレジットカードを追加する

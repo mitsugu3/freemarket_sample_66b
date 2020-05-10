@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+.signupmean-container{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  position: relative;
+
+
+  .signupmean-main {
+    height: calc(100vh - 20%);
+    margin-top: 10px;
+    justify-content: center;
+    background-color:#f8f8f8; 
+    text-align: center;
+
+    &__menu {
+      width: 100%;
+      height: calc(100vh - 170px);
+
+      display: inline-block;
+      text-align: center;
+      width: 700px;
+      background-color: #fff;
+      margin-bottom: 100px;
+      &_list {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 10px;
+        &_top{
+          width: 100%;
+          font-size: 20px;
+          padding-bottom: 30px;
+          text-align: center;
+          border-bottom: 0.2rem rgb(245, 245, 245) solid;
+
+
+        }
+
+        &_mail {
+          padding-top: 20px;
+          
+          &_btn{
+            height: 5rem;
+            width: 32.8rem;
+            background-color: #3CCACE;
+            color: #fff;
+            display: block;
+            margin: auto;
+            margin-bottom: 1rem;
+            color: #fff;
+            position: relative;
+            font-size: 1.5rem;
+            line-height: 5rem;
+            text-align: center;
+
+
+            .far.fa-envelope {
+              font-size: 2.5rem;
+              position: absolute;
+              bottom: 1rem;
+              left: 1.5rem;
+            }
+
+          }
+        }
+
+        &_facebook {
+          &_btn {
+            height: 5rem;
+            width: 32.8rem;
+            background-color: #385185;
+            color: #fff;
+            display: block;
+            margin: auto;
+            margin-bottom: 1rem;
+            color: #fff;
+            position: relative;
+            font-size: 1.5rem;
+            line-height: 5rem;
+            text-align: center;          
+            
+            .fab.fa-facebook-square {
+              font-size: 2.5rem;
+              position: absolute;
+              bottom: 1rem;
+              left: 1.5rem;
+    
+            }
+    
+          }
+        }
+
+        &_google {
+
+
+          &_btn {
+            height: 5rem;
+            width: 32.8rem;
+            background: #fff;
+            border: solid 1px #979797;
+            display: block;
+            margin: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            font-size: 1.5rem;
+            line-height: 5rem;
+            color: #333;
+            text-align: center;
+
+
+            .fab.fa-google {
+              font-size: 2.5rem;
+              position: absolute;
+              bottom: 1rem;
+              left: 1.5rem;
+    
+            }
+          }
+        }
+      }
+    }
+  }
+}
