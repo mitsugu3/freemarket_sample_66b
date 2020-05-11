@@ -1,24 +1,31 @@
-class ProductsnewController < ApplicationController  
+class ProductsController < ApplicationController  
   def new
-    @product = Product.includes(:images)
+    @product = Product.new
     @product.images.new
   end
 
   def create
-    @product = Product.new
-    if @product.save!
-      redirect_to post_index_path, notice: '商品が登録されました'
+    @product = Product.new(post_params)
+    if @product.save
+      redirect_to posts_index_path, notice: '商品が登録されました'
     else
-      @product = Product.includes(:user)
-      flash.now[:alert] = '画像を登録して下さい。'
-      redirect_to productsnew_create_path
+      render 'new' 
     end
   end
-  
+
   private
 
   def post_params
-    params.require(:post).permit(:name, :price, images_attributes: [:src])
+    params.require(:product).permit(:id,:user_id,:name,:description,:category,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:src]).merge(user_id: current_user.id)
   end
+
+
+  #params.require(:product).permit(:id,:user_id,:name,:description,:category,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:images]).merge(user_id: current_user.id)
+
+  #def item_params
+    #params.require(:item).permit(
+     # :name,
+      #[images_attributes: [:image]])
+  #end
 
 end

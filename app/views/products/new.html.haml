@@ -7,11 +7,19 @@
     %p 商品画像 
     %span ※必須 
     %br
+      .image-box
       .drop_box
         = f.fields_for :images do |i|
-          = i.file_field :src
-        
+          -# .js-file_group{"data-index" => "#{i.index}"}
 
+          = i.file_field :src, class:"hidden-field"
+
+          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
+          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][5][image]", id: "item_images_attributes_5_image" }
+        
     .products-new__form
 
       .products-new__form__box
@@ -20,6 +28,8 @@
       %br
       .products-new__form__box__text_field 
         = f.text_area :name, class: "text", min: 1, max: 40, size: "50x2", :value =>"ジャケット（40文字まで）"
+        - if @product.errors.messages[:name].any?
+          %warning.error= @product.errors.messages[:name][0]    
       
       .products-new__form__box
       商品の説明
@@ -27,20 +37,22 @@
       %br
       .products-new__form__box__text_detail 
         = f.text_area :description, class: "text", min: 1, max: 1000, size: "80x6" ,:value =>"必須1,000文字以内（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        - if @product.errors.messages[:description].any?
+          %warning.error= @product.errors.messages[:description][0] 
       
       .products-new__select__box
       カテゴリー
       %span ※必須
       %br
       .products-new__select__box__category
-        = f.select :category_id, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
+        = f.select :category, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
       
       .products-new__select__box
       ブランド
       %span ※任意
       %br
       .products-new__select__box__category
-        = f.select :brand_id, [["シャネル", "chanel"], ["グッチ", "gucci"],["ディオール", "dior"],["ユニクロ", "uniqlo"]], class: 'form-control'
+        = f.select :brands, [["シャネル", "chanel"], ["グッチ", "gucci"],["ディオール", "dior"],["ユニクロ", "uniqlo"]], class: 'form-control'
       
       .products-new__select__box
       商品の状態
@@ -82,7 +94,9 @@
       %span ※必須
       %br
       .products-new__prices__b
-      = f.text_area :price, class: "text", min: 1, max: 40, size: "50x2", :value =>"¥300~¥2,000,000"
+        = f.text_area :price, class: "text", min: 1, max: 40, size: "50x2", :value =>"¥300~¥2,000,000"
+        - if @product.errors.messages[:price].any?
+          %warning.error= @product.errors.messages[:price][0] 
 
     .products-new__last
       %h1

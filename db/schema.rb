@@ -24,18 +24,18 @@ ActiveRecord::Schema.define(version: 20200506140523) do
     t.integer  "user_id",                       null: false
     t.string   "name",                          null: false
     t.text     "description",     limit: 65535, null: false
-    t.integer  "category_id",                   null: false
-    t.integer  "brand_id",                      null: false
+    t.string   "category",                      null: false
+    t.string   "brands",                        null: false
     t.string   "condition",                     null: false
     t.string   "delivery_user",                 null: false
     t.string   "delivery_method",               null: false
     t.string   "area",                          null: false
     t.string   "delivery_days",                 null: false
     t.integer  "price",                         null: false
+    t.integer  "buyer_id"
+    t.integer  "saler_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
-    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 

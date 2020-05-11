@@ -1,6 +1,7 @@
 class ProductsnewController < ApplicationController  
   def new
     @product = Product.new
+
   end
 
   def create
@@ -13,5 +14,11 @@ class ProductsnewController < ApplicationController
       redirect_to productsnew_create_path
     end
   end
+
+  private
+
+  def product_pramas
+    params.require(:user).permit(:name,:description,:category,:brand,:conditon,:delivery_user,:delivery_method,:area,:delivery_days,:price,images_attributes: [:image]) 
+  end  
 
 end

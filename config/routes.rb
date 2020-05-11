@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'productsnew/new'
+  get 'products/new'
   devise_for :users
   get 'productsnew/create'
   get 'posts/index'
   get 'products/show'
+  resources :products, except: :show
   get 'login'   => 'sessions#new'
   post'login'   => 'sessions#create'
   get 'products/confirmation'
