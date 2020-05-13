@@ -16,16 +16,7 @@ class ProductsController < ApplicationController
   private
 
   def post_params
-    params.require(:product).permit(:id,:user_id,:name,:description,:category,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:product).permit(:id,:user_id,:name,:description,:category,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
-
-
-  #params.require(:product).permit(:id,:user_id,:name,:description,:category,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:images]).merge(user_id: current_user.id)
-
-  #def item_params
-    #params.require(:item).permit(
-     # :name,
-      #[images_attributes: [:image]])
-  #end
 
 end
