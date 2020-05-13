@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', ()=> {
-  console.log(2)
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
@@ -25,18 +24,14 @@ $(document).on('turbolinks:load', ()=> {
   $('.hidden-destroy').hide();
 
   $('.drop_box').on('change', '.js-file', function(e) {
-    console.log(1)
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    console.log(blobUrl)
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
-      console.log(3)
     } else {  // 新規画像追加の処理
-      console.log(4)
       $('.previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('.drop_box').append(buildFileField(fileIndex[0]));
@@ -46,7 +41,7 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
-  $('#drop_box').on('click', '.js-remove', function() {
+  $('.drop_box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);

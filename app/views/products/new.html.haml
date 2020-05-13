@@ -24,19 +24,6 @@
               = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
               .js-remove 削除
 
-        -#= f.fields_for :images do |i| 
-        -# .js-file_group{"data-index" => "#{image.index}"}
-          
-        -#= i.file_field :src, class:"hidden-field"
-          
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][5][image]", id: "item_images_attributes_5_image" }
-        
-    .products-new__form
-
       .products-new__form__box
       商品名
       %span ※必須

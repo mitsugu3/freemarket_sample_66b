@@ -87,6 +87,12 @@ warning{
       background-image: url("/images/material/camera.png");
       background-position: center;
       background-repeat: no-repeat;
+        .previews {
+          align-items: center;
+          margin-top: -70px;
+          display: flex;
+          margin-right: 10px;
+        }
     }
 
   &__last {
