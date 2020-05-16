@@ -27,3 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# public/uploads以下をアップロードしないように設定
+public/uploads
