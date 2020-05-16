@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   belongs_to :saler, class_name: "User" ,optional: true
   belongs_to :buyer, class_name: "User" ,optional: true
 
-  accepts_nested_attributes_for :images, allow_destroy: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
@@ -14,9 +13,10 @@ class Product < ApplicationRecord
   validates :description, presence: true , length: { minimum:1, message: '商品の詳細を入力して下さい' }
   validates :price, presence: true , length: { minimum:1, message: '価格を設定して下さい' }
 
-
+  validates :images, presence: true
   
-  accepts_nested_attributes_for :images
+  
+  accepts_nested_attributes_for :images, allow_destroy: true
 
 
 end

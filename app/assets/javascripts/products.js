@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][src]"
-                    id="product_images_attributes_${num}_src"><br>
+                    id="product_images_attributes_${num}_src">
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
@@ -32,16 +32,16 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('.previews').append(buildImg(targetIndex, blobUrl));
+      $('.previews-image-box').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('.drop_box').append(buildFileField(fileIndex[0]));
+      $('.previews').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
-  $('.drop_box').on('click', '.js-remove', function() {
+  $('.previews').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
