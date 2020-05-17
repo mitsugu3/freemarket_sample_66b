@@ -5,9 +5,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       ## Database authenticatable
 
-      t.string :email,              null: false, default: ""
+      t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :nickname,   null: false
+      t.string :nickname, null: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -33,12 +33,25 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-      t.string :password,   null: false
-      t.string :last_name,  null: false
+      t.string :last_name, null: false
       t.string :first_name, null: false
-      t.string :last_kana,  null: false
-      t.string :first_kana, null: false
-      t.integer :phonenumber, null: false
+      t.string :last_name_kana, null: false
+      t.string :first_name_kana, null: false
+      t.string :phone_number, null: false
+      t.date :birthday, null: false
+      t.string :address_post, null: false
+      t.string :address_first_name, null: false
+      t.string :address_last_name, null: false
+      t.string :address_last_name_kana, null: false
+      t.string :address_first_name_kana, null: false
+      t.string :address_number, null: false
+      t.integer :address_prefecture, null: false
+    #  t.string :address_name, null: false
+      t.string :address_block, null: false
+      t.string :address_building
+      t.string :address_phone_number
+      t.text :introduce
+
 
       t.timestamps null: false
     end

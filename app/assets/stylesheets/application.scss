@@ -2,11 +2,17 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'index';
+@import 'signups/shared/signup_footer';
+@import 'signups/shared/signup_header';
+@import 'signups/step1';
 @import 'users/shared/signup_footer';
 @import 'users/shared/signup_header';
 @import 'users/show';
+@import 'mypage';
 @import 'registrations/new';
 @import 'sessions/new';
 @import 'productsnew';
 @import 'products';
 @import 'products/confirmation';
+@import 'products/confirmation';
+@import 'layouts/error_message';

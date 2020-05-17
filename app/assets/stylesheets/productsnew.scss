@@ -23,21 +23,56 @@ $boxsolid: #ccc;
   margin: 0 auto;
 }
 
-// 画像保存-mixin
-@mixin upload{
-  position: relative;
-  height: 30px;
-  padding: 80px 0;
-  background-color: #f5f5f5;
-  border: 1px dashed $boxsolid;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-  flex: 1;
-  margin: 10px;
-  background-image: url("/images/material/camera.png");
-  background-position: center;
-  background-repeat: no-repeat;
+p {
+ font-size: 20px;
+}
+
+.js-file_button{
+  display: flex;
+}
+
+
+span {
+  background: $furimagreen;
+  margin: 0 0 8px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $baseColor;
+  font-size: 12px;
+}
+
+.text {
+  color: gray;
+  font-size: 15px;
+}
+
+
+.warning{
+  font-weight: bold;
+  color: tomato;
+}
+
+//削除ボタン
+.remove {
+  font-size: 15px;
+  background: $furimagreen;
+  margin: 0 0 8px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $baseColor;
+  font-size: 12px;
+}
+
+.js-remove {
+  align-items: center;
+  width: 50px;
+  font-size: 15px;
+  background: $furimagreen;
+  margin: 0 5px 8px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $baseColor;
+  font-size: 12px;
 }
 
 
@@ -63,114 +98,62 @@ $boxsolid: #ccc;
 
 //出品フォーマット
 .products-new {
-  width: 800px;
+  width: 1000px;
+  height: 800px;
   margin: 0 auto;
   background-color: $baseColor;
   font-family: Arial;
-  &__form {
-    padding: 20px 40px 40px 40px;
-    position: relative;
-    border: 1px solid $solidcolor;
-    &__comment {
-      font-size: 12px;
-    }
-    &__box {
-      width: 100%;
-      margin-bottom: 25px;
-      &__text_field {
-        @include form;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        font-size: 14px;
-        color: $boxsolid;
-      }
-      &__text_detail {
-        @include form;
-        height: 100px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        font-size: 14px;
-        color: $boxsolid;
-      }
-    }
     .drop_area {
-      display: flex;
-      justify-content: space-between;
       width: 100%;
-      &__image_box {
-        width: 114px;
-        margin-right: 10px;
-      }
-      .delete_link {
-        text-align: center;
-        line-height: 2.5;
-        display: block;
-        height: 25%;
-        color: #0099e8;
-        background-color: $solidcolor;
-        border-top: 1px solid #ddd;
-      }
     }
     .drop_box {
-      @include upload;
-    }
-  }
-  &__select {
-    padding: 20px 40px 40px 40px;
-    position: relative;
-    border: 1px solid $solidcolor;
-    &__box {
-      width: 400px;
-      margin: 0 0 25px auto;
-      &__category {
-        @include form;
-        height: 15px;
-        padding: 16px 16px 16px;
-        border-radius: 4px;
-        font-size: 16px;
-        margin-bottom: 20px;
+      .previews-image-box {
+        align-items: center;
+        margin-top: -50px;
+      }
+      position: relative;
+      height: 200px;
+      padding: 80px 0;
+      background-color: #f5f5f5;
+      border: 1px dashed $boxsolid;
+      font-size: 14px;
+      align-items: center;
+      cursor: pointer;
+      flex: 1;
+      margin: 10px;
+      background-image: url("/images/material/camera.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      .previews {
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
       }
     }
-  }
-  &__prices {
-    padding: 20px 40px 40px 40px;
-    position: relative;
-    border: 1px solid $solidcolor;
-    &__box {
-      width: 400px;
-      margin: 0 0 25px auto;
-      &__text {
-        @include form;
-        padding: 10px 16px 10px;
-        border-radius: 4px;
-        font-size: 14px;
-        margin-bottom: 20px;
-        color: $boxsolid;
-      }
-    }
-  }
-  span {
-    background: $furimagreen;
-    margin: 0 0 8px 8px;
-    padding: 2px 4px;
-    border-radius: 2px;
-    color: $baseColor;
-    font-size: 12px;
-  }
+
   &__last {
     font-size: 11px;
-    padding: 20px 40px 40px 40px;
+    padding: 40px 40px 60px 40px;
     position: relative;
+
+    //投稿ボタン
     &__btm_create {
       @include btm;
       background: $furimagreen;
       border: 1px solid $furimagreen;
-    } 
+    }
+
+    //戻るボタン
     &__btm_back {
       @include btm;
+      height: 40px;
       background: #aaa;
       border: 1px solid #aaa;
-      margin-bottom: 60px;
+      margin-bottom: 100px;
     }
+
   }
+
 }
+
