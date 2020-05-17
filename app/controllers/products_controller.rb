@@ -5,4 +5,8 @@ class ProductsController < ApplicationController
   def confirmation
   end 
   
+  def set_images
+    @images = Image.where(product_id: params[:id])
+  end
+
 end

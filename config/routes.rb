@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :products, :messages
   root "posts#index"
+  resources :products do
+    collection do
+      get "set_images"
+    end
+  end
+
   
 end
