@@ -1,0 +1,18 @@
+.header 
+  .header__box
+    .header__box__logo
+    .header__box__input
+      %p キーワードから探す
+      .header__box__input__square
+        .header__box__input__square__img 
+  .header__nav
+    %ul.right
+      %li
+        カテゴリ
+      %li
+        ブランド
+    %ul.left
+      %li
+        = link_to "ログイン", new_user_session_path, class: 'post'
+      %li
+        = link_to "新規登録", users_show_path, class: 'show' 

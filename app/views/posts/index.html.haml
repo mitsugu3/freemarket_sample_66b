@@ -1,26 +1,17 @@
 //出品するボタン
 .scroll_button
-  = link_to image_tag("/images/material/icon/icon_camera.png", class: "scroll_button"), productsnew_new_path
+  - if user_signed_in?
+    = link_to image_tag("/images/material/icon/icon_camera.png", class: "scroll_button"), products_new_path
+  - else 
+    = link_to image_tag("/images/material/icon/icon_camera2.png", class: "scroll_button")
 
 //ヘッダー
 .header 
   .header__box
-    .header__box__logo
-    .header__box__input
-      %p キーワードから探す
-      .header__box__input__square
-        .header__box__input__square__img 
-  .header__nav
-    %ul.right
-      %li
-        カテゴリ
-      %li
-        ブランド
-    %ul.left
-      %li
-        = link_to "ログイン", new_user_session_path, class: 'post'
-      %li
-        = link_to "新規登録", users_show_path, class: 'show'
+    - if user_signed_in?
+      = render 'header/header_login'
+    - else 
+      = render 'header/header_logout'
 
 .main
   %p 人生を変えるフリマアプリ

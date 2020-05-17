@@ -1,0 +1,121 @@
+.header__item
+  = link_to image_tag("/images/material/logo/logo.png", class: "header__item__logo"), posts_index_path
+
+.products-new
+  .error-message
+    = render 'layouts/error_message'  
+  = form_for @product do |f|
+    .products-new__form
+    商品画像 
+    %span ※必須 
+    %br
+      .drop_box    
+        .previews-image-box
+          - if @product.persisted?
+            - @product.images.each_with_index do |image, i|
+              = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+        .previews
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :src, class: 'js-file'
+              %br/
+              .js-remove 削除
+            - if @product.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @product.persisted?
+            .js-file_group{"data-index" => "#{@product.images.count}"}
+              = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+              .js-remove 削除
+
+      .products-new__form__box
+      商品名
+      %span ※必須
+      %br
+      .products-new__form__box__text_field 
+        = f.text_area :name, class: "text", min: 1, max: 40, size: "50x2", :value =>"ジャケット（40文字まで）"
+        - if @product.errors.messages[:name].any?
+          %warning.error= @product.errors.messages[:name][0]    
+      %br
+      .products-new__form__box
+      商品の説明
+      %span ※必須
+      %br
+      .products-new__form__box__text_detail 
+        = f.text_area :description, class: "text", min: 1, max: 1000, size: "80x6" ,:value =>"必須1,000文字以内（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        - if @product.errors.messages[:description].any?
+          %warning.error= @product.errors.messages[:description][0] 
+      %br
+      .products-new__select__box
+      カテゴリー
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.select :category, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
+      %br
+      .products-new__select__box
+      ブランド
+      %span ※任意
+      %br
+      .products-new__select__box__category
+        = f.select :brands, [["シャネル", "chanel"], ["グッチ", "gucci"],["ディオール", "dior"],["ユニクロ", "uniqlo"]], class: 'form-control'
+      %br
+      .products-new__select__box
+      商品の状態
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.select :condition, [["新品", "brandnew"], ["目立つ汚れなし", "good"],["やや悪い", "bad"]], class: 'form-control'
+      .products__new__select__box
+      %br      
+      配送料の負担
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.select :delivery_user, [["送料込", "brandnew"], ["着払い", "good"]], class: 'form-control'
+      
+      %br
+      .products-new__select__box
+      配送方法
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.select :delivery_method, [["フリマ匿名配送", "frima"], ["宅急便", "courier"], ["ネコポス", "nekoposu"], ["普通郵便", "regularmail"]], class: 'form-control'
+      
+      %br      
+      .products-new__select__box
+      配送元の地域
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.collection_select :area, Prefecture.all, :id, :name
+
+      %br 
+      .products-new__select__box
+      発送までの日数
+      %span ※必須
+      %br
+      .products-new__select__box__category
+        = f.select :delivery_days, [["1〜2日", "fewdays"], ["2〜3日", "middledays"], ["5〜7日", "longdays"]], class: 'form-control'
+
+      %br
+      .products-new__prices__box
+      価格
+      %span ※必須
+      %br
+      .products-new__prices__b
+        = f.text_area :price, class: "text", min: 1, max: 40, size: "50x2", :value =>"¥300~¥2,000,000"
+        - if @product.errors.messages[:price].any?
+          %warning.error= @product.errors.messages[:price][0] 
+
+    .products-new__last
+      %h1
+      禁止されている出品、行為を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
+      %h2
+      偽ブランドの販売は犯罪であり処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+    .products-new__last__btm_create  
+      = f.submit "投稿する", class: "products-new__last__btm_create"
+
+
+    %br
+    .products-new__last__btm_back
+      = link_to "戻る", posts_index_path, class: "products-new__last__btm_back"

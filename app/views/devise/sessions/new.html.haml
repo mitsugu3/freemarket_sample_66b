@@ -1,13 +1,13 @@
 
 .signin-container
   .signin-header
-    = render partial: 'users/shared/signup_header'
+    = render partial: 'signups/shared/signup_header'
 
   .signin-main
     .signin-main__menu
       .signin-main__menu_signup
         アカウントをお持ちでない方はこちら
-        = button_to new_user_registration_path, method: :get, class: "signin-main__menu_signup_btn" do
+        = button_to step1_signups_path, method: :get, class: "signin-main__menu_signup_btn" do
           新規会員登録
         = link_to class: "signin-main__menu_signup_forget" do
           パスワードをお忘れの方
@@ -23,19 +23,18 @@
           Googleでログイン
 
 
-
-
       .signin-main__menu_login
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
 
           .field
-            = f.text_field :nickname, autocomplete: "nickname", placeholder: "メールアドレス", class: 'signin_text_field'
+            = f.email_field :email, class: 'login_form', id: 'email', placeholder: 'メールアドレス'
           .field
-            = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: 'signin_text_field'
+            = f.password_field :password, class: 'login_form', id: 'password', placeholder: 'パスワード'
 
-        .signin-main__menu_login_action
-          = button_to new_user_registration_path, method: :get, class: "signin-main__menu_login_action_btn" do
-            ログイン
+          .signin-main__menu_login_action
+            = f.submit "登録", class: "signin-main__menu_login_action_btn"
+
+
   .signin-footer
-    = render partial: 'users/shared/signup_footer'
+    = render partial: 'signups/shared/signup_footer'

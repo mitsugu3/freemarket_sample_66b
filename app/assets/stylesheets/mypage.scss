@@ -1,0 +1,234 @@
+//マイページ
+.user-mypage {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.side-content {
+  background-color: #ffffff;
+  width: 280px;
+  margin: 30px 30px 30px 180px;
+  
+}
+
+.mypage-nav {
+
+  &__list {
+    
+    &__item {
+      text-decoration: none;
+    }
+  }
+  &__head {
+    background-color: #f5f5f5;
+    padding-top: 30px;
+  }
+  &__setting {
+    &__item {
+      text-decoration: none;
+    }
+  }
+  li {
+    font-size: 14px;
+    padding: 16px;
+    cursor: pointer;
+    border: 1px solid #f5f5f5;
+    &:hover {
+      opacity: 0.7;
+    }
+    i {
+      float: right;
+    }
+  }
+  .active {
+    font-weight: bold;
+    background-color: #eeeeee;
+  }
+  a {
+    color: #000000;
+  }
+}
+
+.main-content {
+  width: 700px;
+  margin: 30px 180px auto 0;
+}
+
+.mypage-user {
+  height: 200px;
+  text-align: center;
+  padding: 20px;
+  background-color: #3ccace;
+  &__icon {
+    margin-top: 30px;
+  }
+  &__name {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  &__info {
+    margin-top: 5px;
+  }
+  &__link {
+    height: 111px;
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+.mypage-info-todo {
+  background-color: #ffffff;
+  .tabs {
+    display: flex;
+    height: 74px;
+    line-height: 74px;
+    li {
+      width: 350px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #eeeeee;
+    }
+    .active {
+      background-color: #ffffff;
+      border-top: 2px solid #3ccace;
+    }
+  }
+  .information-list {
+    height: auto;
+    &__logo {
+
+    }
+    &__body {
+      li {
+        padding: 16px;
+        border-bottom: 1px solid #f5f5f5;
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+    &__footer {
+      height: 40px;
+      padding: 16px;
+      line-height: 40px;
+      a {
+        text-decoration: none;
+        color: #000000;
+        text-align: center;
+        padding: 15px 293px;
+        background-color:#f5f5f5;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.mypage-products {
+  margin-top: 30px;
+  background-color: #ffffff;
+  &__head {
+    height: 72px;
+    line-height: 72px;
+    padding: 0 11px;
+    font-weight: bold;
+  }
+  &__tabs {
+    display: flex;
+    height: 74px;
+    line-height: 74px;
+    li {
+      width: 350px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #eeeeee;
+    }
+    .active {
+      border-top: 2px solid #3ccace;
+      background-color: #ffffff;
+    }
+  }
+  .products-transaction {
+    height: 236px;
+    text-align: center;
+    line-height: 236px;
+    opacity: 0.3;
+  }
+}
+
+//ログアウト
+.logout-page {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.logout-content {
+  width: 700px;
+  background-color: #ffffff;
+  padding: 64px;
+  margin: 30px 180px auto 0;
+  &__box {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+    a {
+      background: #3ccace;
+      border: 1px solid #3ccace;
+      text-decoration: none;
+      color: #ffffff;
+      padding: 15px 120px;
+      margin: 0 auto;
+      width: 320px;
+    }
+  }
+}
+
+//クレジット
+.cledit-page {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.cledit-content {
+  width: 700px;
+  background-color: #ffffff;
+  margin: 30px 180px auto 0;
+  &__head {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+  &__main {
+    padding: 64px;
+    text-align: center;
+    h2 {
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+    a {
+      background: #3ccace;
+      border: 1px solid #3ccace;
+      text-decoration: none;
+      color: #ffffff;
+      padding: 15px 120px;
+      margin: 0 auto;
+      width: 240px;
+    }
+  }
+}

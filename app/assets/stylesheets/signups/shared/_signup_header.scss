@@ -1,0 +1,19 @@
+.signup-header{
+  height: 10%;
+  width: 100vw;
+  background-color:#fff;
+  display: flex;
+  padding-top: 10px;
+  &_logo{
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    background-image: url("/images/material/logo/logo.png");
+    background-size: 140px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+  }
+}
