@@ -12,6 +12,7 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'freemarket66bosaka'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket66bosaka'
+  config.fog_directory  = 'osakafreemarket66b'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/osakafreemarket66b'
+  config.fog_public = false
 end
