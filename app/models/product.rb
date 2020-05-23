@@ -1,13 +1,12 @@
 class Product < ApplicationRecord
   belongs_to :user, optional: true
   has_many :images
-  has_many :categories
   belongs_to :saler, class_name: "User" ,optional: true
   belongs_to :buyer, class_name: "User" ,optional: true
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  belongs_to :category
 
   validates :name, presence: true , length: { minimum:1, message: '商品名を入れて下さい' }
   validates :description, presence: true , length: { minimum:1, message: '商品の詳細を入力して下さい' }

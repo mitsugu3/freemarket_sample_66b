@@ -82,5 +82,5 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
-
+gem 'pry-rails'
 gem 'ancestry'
