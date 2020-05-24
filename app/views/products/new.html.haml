@@ -46,13 +46,8 @@
           %warning.error= @product.errors.messages[:description][0] 
       %br
       .products-new__select__box
-      カテゴリー
-      %span ※必須
-      %br
       .products-new__select__box__category
-        = f.select :category, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
- 
- 
+        //= f.select :category, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
       .exhibitionPage__main__contents__detail__category
         .exhibitionPage__main__contents__detail__category__title
           %label.sab-title カテゴリー
