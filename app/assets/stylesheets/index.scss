@@ -80,12 +80,13 @@ height: 50px;
 //商品ボックス
 @mixin white-box {
   width: 220px;
-  height: 245px;
+  height: 280px;
   background-color: white;
 }    
 
 //商品詳細
 @mixin details {
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -421,268 +422,188 @@ height: 50px;
           height: 70%;
           margin-top: -20px;
           background-repeat: no-repeat;
-          background-image: url("/images/material/icon/image-01.png");
         }
-        &__ul {
-          padding: 16px;
-          overflow: hidden;
-          line-height: 1.5;
-          font-size: 16px;
-          text-align: left;
-          &__title {
-            @include details;
-          }  
-        p {
-          font-size: 10px;
-          text-align: left;
-          color: gray;
+        img {
+          width: 220px;
+          height: 100%;
         }
+        h3{
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 10px 5px 10px;
+          color: black;
+          p{
+            color: red;
+          }
         }
-    }
-    &__2 {
-      @include white-box;
-      &__img {
-        background-size: 220px auto;
-        width: 220px;
-        height: 70%;
-        margin-top: -20px;
-        background-repeat: no-repeat;
-        background-image: url("/images/material/icon/image-02.png");
-      }
-      &__ul {
-        padding: 16px;
-        overflow: hidden;
-        line-height: 1.5;
-        font-size: 16px;
-        text-align: left;
-        &__title {
-          @include details;
-        }  
-      p {
-        font-size: 10px;
-        text-align: left;
-        color: gray;
-      }
+        p{
+          font-weight: bold;
+          font-size: 22px;
+          float: left;
+        }
+        p1 {
+          font-size: 18px;
+          margin: 10px;
+          color: black;
+        }
+        a {
+          margin-bottom: 10px;
+          text-decoration: none;
+        } 
       }
     }
-    &__3 {
-      @include white-box;
-      &__img {
-        background-size: 220px auto;
-        width: 220px;
-        height: 70%;
-        margin-top: -20px;
-        background-repeat: no-repeat;
-        background-image: url("/images/material/icon/image-03.png");
-      }
-    &__ul {
-      padding: 16px;
-      overflow: hidden;
-      line-height: 1.5;
-      font-size: 16px;
-      text-align: left;
-      &__title {
-        @include details;
-      }  
+  }
+
+
+  &__brands {
+    margin-top: 100px;
+    @include black-font;
     p {
-      font-size: 10px;
-      text-align: left;
-      color: gray;
+      @include blue-font;
     }
-    }
+    &__box {
+      width: 780px;
+      margin: 26px auto;
+      display: flex;
+      justify-content: space-around;
+      &__1 {
+        @include white-box;
+        &__img {
+          background-size: 220px auto;
+          width: 220px;
+          height: 70%;
+          margin-top: -20px;
+          background-repeat: no-repeat;
+        }
+        img {
+          width: 220px;
+          height: 100%;
+        }
+        h3{
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 10px 5px 10px;
+          color: black;
+          p{
+            color: red;
+          }
+        }
+        p{
+          font-weight: bold;
+          font-size: 22px;
+          float: left;
+        }
+        p1 {
+          font-size: 18px;
+          margin: 10px;
+          color: black;
+        }
+        a {
+          margin-bottom: 10px;
+          text-decoration: none;
+        } 
+      }
     }
   }
 }
-
-&__brands {
-  margin-top: 100px;
-  @include black-font;
-  p {
-    @include blue-font;
-  }
-  &__box {
-    padding-bottom: 100px;
-    width: 780px;
-    margin: 26px auto;
-    display: flex;
-    justify-content: space-around;
-    &__1 {
-      @include white-box;
-      &__img {
-        background-size: 220px auto;
-        width: 220px;
-        height: 70%;
-        margin-top: -20px;
-        background-repeat: no-repeat;
-        background-image: url("/images/material/icon/image-01.png");
-      }
-      &__ul {
-        padding: 16px;
-        overflow: hidden;
-        line-height: 1.5;
-        font-size: 16px;
-        text-align: left;
-        &__title {
-          @include details;
-        }  
-      p {
-        font-size: 10px;
-        text-align: left;
-        color: gray;
-      }
-      }
-  }
-  &__2 {
-    @include white-box;
-    &__img {
-      background-size: 220px auto;
-      width: 220px;
-      height: 70%;
-      margin-top: -20px;
-      background-repeat: no-repeat;
-      background-image: url("/images/material/icon/image-02.png");
-    }
-    &__ul {
-      padding: 16px;
-      overflow: hidden;
-      line-height: 1.5;
-      font-size: 16px;
-      text-align: left;
-      &__title {
-        @include details;
-      }  
-    p {
-      font-size: 10px;
-      text-align: left;
-      color: gray;
-    }
-    }
-  }
-  &__3 {
-    @include white-box;
-    &__img {
-      background-size: 220px auto;
-      width: 220px;
-      height: 70%;
-      margin-top: -20px;
-      background-repeat: no-repeat;
-      background-image: url("/images/material/icon/image-03.png");
-    }
-  &__ul {
-    padding: 16px;
-    overflow: hidden;
-    line-height: 1.5;
-    font-size: 16px;
-    text-align: left;
-    &__title {
-      @include details;
-    }  
-  p {
-    font-size: 10px;
-    text-align: left;
-    color: gray;
-  }
-  }
-  }
-  }
-}
-}
-
-.low-content {
-  background-image: url("/images/material/pict/bg-appBanner-pict.jpg");
-  background-repeat: no-repeat;
-  padding: 100px 40px;
-  background-size: cover;
-  background-position: center;
-  color: $white;
-  text-align: center;
-  font-size: 35px;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  h2 {
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.4;
-  }
-  &__img {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  padding-top: 10px;
-    &__1 {
-      @include ios;
-    }
-    &__2 {
-      margin-left: 10px;
-      @include and;
-    }
-  }  
-}
-
-//フッター部分
-.footer {
-  padding: 60px 0;
-  background-color: #272727;
-  text-align: center;
-  align-items: center;
-  &__content {
-    display: flex;
-    margin: 5px auto;
-    width: 840px;
-    color: $white;
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 32px;  
-    &__left {
-      p {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      list-style: none;
-      width: calc(1 / 3 * 100%);
-      margin: 0 0 20px;
-    }
-    &__center {
-      p {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      list-style: none;
-      width: calc(1 / 3 * 100%);
-      margin: 0 2% 0 0;
-      color: $white;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 32px;  
-    }
-    &__right {
-      p {
-        font-size: 16px;
-        font-weight: bold;     
-        margin-bottom: 10px; 
-      }
-      list-style: none;
-      width: calc(1 / 3 * 100%);
-      margin: 0 2% 0 0;
-      color: $white;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 32px;  
-    }
-  }
-  &__logo {
-    margin: 5px auto;
-    width: 150px;
-    height: 40px;
-    vertical-align: bottom;
-    background-image: url("/images/material/logo/logo-white.png");
-    background-size: 140px auto;
+  
+  .low-content {
+    background-image: url("/images/material/pict/bg-appBanner-pict.jpg");
     background-repeat: no-repeat;
-  }
-  &__copyright {
-    font-size: 14px;
+    padding: 100px 40px;
+    background-size: cover;
+    background-position: center;
     color: $white;
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    h2 {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__img {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+      &__1 {
+        @include ios;
+      }
+      &__2 {
+        margin-left: 10px;
+        @include and;
+      }
+    }  
   }
-} 
+  
+  //フッター部分
+  .footer {
+    padding: 60px 0;
+    background-color: #272727;
+    text-align: center;
+    align-items: center;
+    &__content {
+      display: flex;
+      margin: 5px auto;
+      width: 840px;
+      color: $white;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;  
+      &__left {
+        p {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        list-style: none;
+        width: calc(1 / 3 * 100%);
+        margin: 0 0 20px;
+      }
+      &__center {
+        p {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        list-style: none;
+        width: calc(1 / 3 * 100%);
+        margin: 0 2% 0 0;
+        color: $white;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;  
+      }
+      &__right {
+        p {
+          font-size: 16px;
+          font-weight: bold;     
+          margin-bottom: 10px; 
+        }
+        list-style: none;
+        width: calc(1 / 3 * 100%);
+        margin: 0 2% 0 0;
+        color: $white;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;  
+      }
+    }
+    &__logo {
+      margin: 5px auto;
+      width: 150px;
+      height: 40px;
+      vertical-align: bottom;
+      background-image: url("/images/material/logo/logo-white.png");
+      background-size: 140px auto;
+      background-repeat: no-repeat;
+    }
+    &__copyright {
+      font-size: 14px;
+      color: $white;
+    }
+  }
