@@ -92,10 +92,8 @@
             = product.name
             - if product.buyer_id == 4
               %p SOLD
-          %p1
-            = "¥#{product.price}"
+          %p1 ¥ #{product.price}
 
-                
   .pickup-list__brands
     ピックアップブランド
     %p アーカイブ
@@ -110,8 +108,7 @@
             = product.name
             - if product.buyer_id == 4
               %p SOLD
-          %p1
-            = "¥#{product.price}"
+          %p1 ¥ #{product.price}
 
 .low-content
   %h2 だれでもかんたん、人生を変えるフリマアプリ
@@ -150,5 +147,5 @@
         %li
           お知らせ
   .footer__logo
-  .footer__copyright 
+  .footer__copyright
     © FURIMA
