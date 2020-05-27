@@ -22,6 +22,31 @@
             %tr
               %th カテゴリー
               %td メンズ ジャケット / アウター テーラードジャケット
+
+              - @parents.each do |parent|
+              -if @product.categories_id == parent.id
+              = link_to '#' do
+              = parent.name
+              - parent.children.each do |child|
+                -if @product.categories_id == child.id
+                  = link_to '#' do
+                    = parent.name
+                    %br
+              = link_to '#' do
+              = child.name
+              %br
+              - child.children.each do |grandchild|
+                -if @product.categories_id == grandchild.id
+                  = link_to '#' do
+                    = parent.name
+                    %br
+              = link_to '#' do
+                = child.name
+                %br
+              = link_to '#' do
+                = grandchild.name
+                
+            %br
             %tr
               %th ブランド
               %td ディズニー
@@ -72,127 +97,6 @@
     .comment-form
     .comment-btm
       コメントする
-
-  -# .item-link
-  -#   .item-link-light
-  -#     ＜  カラフルくま柄のコップ袋
-  -#   .item-link-left
-  -#     マロン様専用  ＞
-
-  -# .media-box
-  -#   .media-icons
-  -#     %i.fab.fa-facebook
-  -#     %i.fab.fa-twitter
-  -#     %i.fab.fa-line
-  -#     %i.fab.fa-pinterest
-
-
-  -# .card-lists
-  -#   .card-section-item
-  -#     しろさんのその他の出品
-  -#     .card-section-item-first
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-  -#     .card-section-item-second
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-
-  -#   .card-section-category
-  -#     ギャラリービスコンティのテーラードジャケット その他の商品
-  -#     .card-section-category-first
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-  -#     .card-section-item-second
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
 
   .item-category-log
   %br
