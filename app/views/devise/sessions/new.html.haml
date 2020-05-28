@@ -12,15 +12,6 @@
         = link_to class: "signin-main__menu_signup_forget" do
           パスワードをお忘れの方
 
-      .signin-main__menu_facebook
-        = button_to new_user_registration_path, method: :get, class: "signin-main__menu_facebook_btn" do
-          %i.fab.fa-facebook-square
-          Facebookでログイン
-
-      .signin-main__menu_google
-        = button_to new_user_registration_path, method: :get, class: "signin-main__menu_google_btn" do
-          %i.fab.fa-google
-          Googleでログイン
 
 
       .signin-main__menu_login
@@ -33,7 +24,7 @@
             = f.password_field :password, class: 'login_form', id: 'password', placeholder: 'パスワード'
 
           .signin-main__menu_login_action
-            = f.submit "登録", class: "signin-main__menu_login_action_btn"
+            = f.submit "ログイン", class: "signin-main__menu_login_action_btn"
 
 
   .signin-footer
