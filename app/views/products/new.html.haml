@@ -57,21 +57,21 @@
       %span ※任意
       %br
       .products-new__select__box__category
-        = f.select :brands, [["シャネル", "chanel"], ["グッチ", "gucci"],["ディオール", "dior"],["ユニクロ", "uniqlo"]], class: 'form-control'
+        = f.select :brands, [["シャネル", "シャネル"], ["グッチ", "グッチ"],["ディオール", "ディオール"],["ユニクロ", "ユニクロ"]], class: 'form-control'
       %br
       .products-new__select__box
       商品の状態
       %span ※必須
       %br
       .products-new__select__box__category
-        = f.select :condition, [["新品", "brandnew"], ["目立つ汚れなし", "good"],["やや悪い", "bad"]], class: 'form-control'
+        = f.select :condition, [["新品", "新品"], ["目立つ汚れなし", "目立つ汚れなし"],["やや悪い", "やや悪い"]], class: 'form-control'
       .products__new__select__box
       %br      
       配送料の負担
       %span ※必須
       %br
       .products-new__select__box__category
-        = f.select :delivery_user, [["送料込", "brandnew"], ["着払い", "good"]], class: 'form-control'
+        = f.select :delivery_user, [["送料込", "送料込"], ["着払い", "着払い"]], class: 'form-control'
       
       %br
       .products-new__select__box
@@ -79,7 +79,7 @@
       %span ※必須
       %br
       .products-new__select__box__category
-        = f.select :delivery_method, [["フリマ匿名配送", "frima"], ["宅急便", "courier"], ["ネコポス", "nekoposu"], ["普通郵便", "regularmail"]], class: 'form-control'
+        = f.select :delivery_method, [["フリマ匿名配送", "フリマ匿名配送"], ["宅急便", "宅急便"], ["ネコポス", "ネコポス"], ["普通郵便", "普通郵便"]], class: 'form-control'
       
       %br      
       .products-new__select__box
@@ -95,7 +95,7 @@
       %span ※必須
       %br
       .products-new__select__box__category
-        = f.select :delivery_days, [["1〜2日", "fewdays"], ["2〜3日", "middledays"], ["5〜7日", "longdays"]], class: 'form-control'
+        = f.select :delivery_days, [["1〜2日", "1〜2日"], ["2〜3日", "2〜3日"], ["5〜7日", "5〜7日"]], class: 'form-control'
 
       %br
       .products-new__prices__box

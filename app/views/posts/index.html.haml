@@ -82,11 +82,11 @@
     ピックアップカテゴリー
     %p 新規投稿商品
   .pickup-list__title__box
-    - @product.first(3).each do |product|
-      = link_to products_path(product.id), method: :get do
+    - @product.each do |product|
+      = link_to  product_path(product), method: :get do
         .pickup-list__title__box__1
           .pickup-list__title__box__1__img
-            = image_tag "#{product.images[0].src.url}"
+            = image_tag product.images[0].src.url
           %h3
             = product.name
             - if product.buyer_id == 4
@@ -98,7 +98,7 @@
     %p アーカイブ
   .pickup-list__brands__box
     - @product.first(3).each do |product|
-      = link_to products_path(product.id), method: :get do
+      = link_to  product_path(product), method: :get do
         .pickup-list__brands__box__1
           .pickup-list__brands__box__1__img
             = image_tag "#{product.images[0].src.url}"
