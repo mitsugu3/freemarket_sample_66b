@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.production? # 本番環境:AWS使用
+  # if Rails.env.production? # 本番環境:AWS使用
   config.storage = :fog
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
@@ -12,7 +12,7 @@ CarrierWave.configure do |config|
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
     region: 'ap-northeast-1'
   }
-else
+# else
   config.fog_directory  = 'osakafreemarket66b'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/osakafreemarket66b'
   config.fog_public = false
