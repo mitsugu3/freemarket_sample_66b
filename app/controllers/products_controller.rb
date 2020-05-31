@@ -1,12 +1,7 @@
 class ProductsController < ApplicationController
-  def show
-      @product = Product.find(params[:id])
-      @images = Image.all
-      @category_parent_array = Category.where(ancestry: nil)
-      @category_parent_array = ["---"]
-  end
-
   def new
+    @category_parent_array = Category.where(ancestry: nil)
+    @category_parent_array = ["---"]
     @product = Product.new
     @product.images.new
   end
