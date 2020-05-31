@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   def new
-    @category_parent_array = ["---"]
     @category_parent_array = Category.where(ancestry: nil)
     @product = Product.new
     @product.images.new

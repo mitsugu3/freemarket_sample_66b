@@ -67,7 +67,6 @@ $(document).on('turbolinks:load', function(){
 
     // 子カテゴリー選択後のイベント
     $('.exhibitionPage__main__contents__detail__category').on('change', '#child_category', function(){
-      console.log('こんにちは');
       var child_category_id = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
       if (child_category_id != "---"){ //子カテゴリーが初期値でないことを確認
         $.ajax({
