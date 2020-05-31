@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @parents = Category.all.order("id ASC").limit(13)
+    @product = Product.all.order('created_at DESC').limit(3)
+    @parents = Category.where(ancestry:nil)
+    # リミットの指定
+    # order('created_at DESC').limit(3)
   end
-end
+end 
