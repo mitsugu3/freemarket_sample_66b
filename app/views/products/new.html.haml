@@ -49,10 +49,16 @@
       カテゴリー
       %span ※必須
       %br
-      .products-new__select__box__category
-        = f.select :category, [["ファッション", "fasihon"],["インテリア", "interior"],["書籍", "books"],["おもちゃ", "toys"], ["その他", "other"]], class: 'form-control'
-      %br
       .products-new__select__box
+      .products-new__select__box__category
+      .exhibitionPage__main__contents__detail__category
+        .exhibitionPage__main__contents__detail__category__title
+          %label.sab-title カテゴリー
+          %span.required 必須
+        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+        .exhibitionPage__main__contents__detail__category__choose
+
+
       ブランド
       %span ※任意
       %br
