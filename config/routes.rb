@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'card/new'
+
+  get 'card/show'
+
   get 'products/new'
   devise_for :users
   get 'productsnew/create'
@@ -17,6 +21,13 @@ Rails.application.routes.draw do
   resources :signups do
     collection do
       get 'step1'
+    end
+  end
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
   root "posts#index"
