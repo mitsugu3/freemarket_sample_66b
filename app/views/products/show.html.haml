@@ -4,16 +4,16 @@
   .contents
     .content-box
       .item-name
-        スノー・ボール
+        = @product.name
       .items
-        .item-photo
-        = image_tag"messageImage_1583920032546.jpg", size: "300x300"
+        .item-phot
+          =image_tag @product.images[0].src.url, size: "300x300"
         .item-data
           %table
             %tr
               %th 出品者
               %td
-                しろ
+                = @product.user.nickname
                 %br
                 %br
                 %i.far.fa-smile-beam
@@ -21,36 +21,59 @@
                 %i.far.fa-frown
             %tr
               %th カテゴリー
-              %td メンズ ジャケット / アウター テーラードジャケット
+              %td
+                = @product.category 
             %tr
               %th ブランド
-              %td ディズニー
-            %tr
-              %th 商品のサイズ
-              %td S
+              %td
+                = @product.brands
             %tr
               %th 商品の状態
-              %td 新品、未使用
+              %td
+                = @product.condition
             %tr
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td
+                = @product.delivery_user
             %tr
               %th 配送の方法
-              %td 未定
+              %td
+                = @product.delivery_method
             %tr
               %th 配送元地域
-              %td 福岡県
+              %td
+                = @product.area
             %tr
               %th 発送日の目安
-              %td 2~3日で発送
+              %td
+                = @product.delivery_days
 
 
       .price-box
-        $660
+        = @product.price
+        円
 
       .item-buy-btn
-        = link_to "購入画面に進む", products_confirmation_path, class: 'post'
-
+        .product-fee_payer
+          -if user_signed_in?
+            -if @product.user_id == current_user.id
+              = link_to edit_product_path(@product), data: {turbolinks: false} do
+                .product-edit-btn 商品の編集
+                .product-btn-or
+              = link_to product_path(@product), method: :delete, data: { turbolinks: false} do
+                .product-stop-btn この商品を削除する   
+            -else 
+              -if @product.buyer_id == 0
+                = link_to product_card_confirmation_path(@product), data: {turbolinks: false} do
+                  .product-buy-btn 購入画面に進む
+              -else
+                .product-buy-btn-sold 売り切れました
+          -else
+            -if @product.buyer_id == 0
+              = link_to user_session_path do
+                .product-buy-btn 購入画面に進む
+            -else
+              .product-buy-btn-sold 売り切れました    
       .item-Details
         %br Gallery viscontiのティアード調のフリルデザインが
         %br 上品＆可愛いロングジャケットです。
@@ -72,129 +95,6 @@
     .comment-form
     .comment-btm
       コメントする
-
-  -# .item-link
-  -#   .item-link-light
-  -#     ＜  カラフルくま柄のコップ袋
-  -#   .item-link-left
-  -#     マロン様専用  ＞
-
-  -# .media-box
-  -#   .media-icons
-  -#     %i.fab.fa-facebook
-  -#     %i.fab.fa-twitter
-  -#     %i.fab.fa-line
-  -#     %i.fab.fa-pinterest
-
-
-  -# .card-lists
-  -#   .card-section-item
-  -#     しろさんのその他の出品
-  -#     .card-section-item-first
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-  -#     .card-section-item-second
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-
-  -#   .card-section-category
-  -#     ギャラリービスコンティのテーラードジャケット その他の商品
-  -#     .card-section-category-first
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-  -#     .card-section-item-second
-  -#       .card-left
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-left__textbox
-  -#           .card-left__titletext
-  -#             商品名
-  -#           .card-left__overviewtext
-  -#             価格
-  -#       .card-center
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-center__textbox
-  -#           .card-center__titletext
-  -#             商品名
-  -#           .card-center__overviewtext
-  -#             価格
-  -#       .card-light
-  -#         .card-img
-  -#         = image_tag"messageImage_1583920032546.jpg", size: "200x200"
-  -#         .card-light__textbox
-  -#           .card-light__titletext
-  -#             商品名
-  -#           .card-light__overviewtext
-  -#             価格
-
   .item-category-log
-  %br
-    メルカリ  ＞  ロングジャケット
+  %br メルカリ  ＞  ロングジャケット
   %br
