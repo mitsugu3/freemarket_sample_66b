@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function(){
       childSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'children_wrapper'>
                           <div class='exhibitionPage__main__contents__detail__category__choose1'>
                             <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
-                            <select class="exhibitionPage__main__contents__detail__category__choose--select" id="child_category" name="item[category_id]">
+                            <select class="exhibitionPage__main__contents__detail__category__choose--select" id="child_category" name="product[category_id]">
                               <option value="---" data-category="---">---</option>
                               ${insertHTML}
                             <select>
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
       grandchildSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'grandchildren_wrapper'>
                                 <div class='exhibitionPage__main__contents__detail__category__choose2'>
                                   <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
-                                  <select class="exhibitionPage__main__contents__detail__category__choose__box--select" id="grandchild_category" name="item[category_id]">
+                                  <select class="exhibitionPage__main__contents__detail__category__choose__box--select" id="grandchild_category" name="product[category_id]">
                                     <option value="---" data-category="---">---</option>
                                     ${insertHTML}
                                   </select>
