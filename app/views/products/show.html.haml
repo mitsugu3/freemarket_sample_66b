@@ -63,7 +63,7 @@
                 .product-edit-btn 商品の編集
                 .product-btn-or
               = link_to product_path(@product), method: :delete, data: { turbolinks: false} do
-                .product-stop-btn この商品を削除する   
+                .product-stop-btn この商品を削除する
             -else 
               -if @product.buyer_id == 0
                 = link_to product_card_confirmation_path(@product), data: {turbolinks: false} do

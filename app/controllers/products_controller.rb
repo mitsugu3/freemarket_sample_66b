@@ -32,6 +32,12 @@ class ProductsController < ApplicationController
     @parents = Category.where(ancestry:nil)
   end
 
+  def destroy     
+    @product = Product.find(params[:id])     
+    @product.destroy
+    redirect_to posts_index_path, notice: '商品が削除されました'
+  end   
+
   private
 
   def post_params
