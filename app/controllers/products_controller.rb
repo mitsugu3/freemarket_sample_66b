@@ -34,8 +34,10 @@ class ProductsController < ApplicationController
 
   def destroy     
     @product = Product.find(params[:id])     
-    @product.destroy
-    redirect_to posts_index_path, notice: '商品が削除されました'
+    if @product.destroy
+      redirect_to posts_index_path, notice: '商品が削除されました'
+    else
+      render :destroy, alert: '削除に失敗しました。'
   end   
 
   private
