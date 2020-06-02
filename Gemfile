@@ -87,3 +87,5 @@ gem 'fog-aws'
 gem 'mini_magick'
 
 gem 'payjp'
+
+gem 'ancestry'

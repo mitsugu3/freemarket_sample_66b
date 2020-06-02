@@ -22,7 +22,9 @@
             %tr
               %th カテゴリー
               %td
-                = @product.category 
+                = @product.category.root.name
+                = @product.category.parent.name
+                = @product.category.name
             %tr
               %th ブランド
               %td
