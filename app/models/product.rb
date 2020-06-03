@@ -1,6 +1,5 @@
 class Product < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :images
   has_many :categories
   belongs_to :saler, class_name: "User" ,optional: true
   belongs_to :buyer, class_name: "User" ,optional: true
@@ -15,8 +14,7 @@ class Product < ApplicationRecord
 
   validates :images, presence: true
   
-  
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
-
 
 end

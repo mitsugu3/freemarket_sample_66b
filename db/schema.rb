@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20200525232425) do
     t.integer  "user_id",                       null: false
     t.string   "name",                          null: false
     t.text     "description",     limit: 65535, null: false
-    t.string   "category",                      null: false
+    t.integer  "category_id",                   null: false
     t.string   "brands",                        null: false
     t.string   "condition",                     null: false
     t.string   "delivery_user",                 null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20200525232425) do
     t.integer  "saler_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
@@ -86,5 +87,6 @@ ActiveRecord::Schema.define(version: 20200525232425) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end
