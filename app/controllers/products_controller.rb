@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @parents = Category.where(ancestry:nil)
+    images = Image.all
   end
 
   def destroy     
@@ -38,8 +39,8 @@ class ProductsController < ApplicationController
       redirect_to posts_index_path, notice: '商品が削除されました'
     else
       render :destroy, alert: '削除に失敗しました。'
-  end   
-
+    end   
+  end
   private
 
   def post_params
@@ -52,4 +53,5 @@ class ProductsController < ApplicationController
   end
   
 
-end
+  end
+
