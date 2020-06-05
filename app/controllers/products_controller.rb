@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
 
   def update
     @category_parent_array = Category.where(ancestry: nil)
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
     @images = @product.images.order(id: "DESC")
     @product.update(post_params)
     redirect_to root_path

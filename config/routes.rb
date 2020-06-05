@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get 'productsnew/create'
   get 'posts/index'
   get 'products/show'
-  get "products/:id/edit" => "products#edit"
-  post "produts/:id/update" => "produts#update"
   get 'login'   => 'sessions#new'
   post'login'   => 'sessions#create'
   get 'products/confirmation'
