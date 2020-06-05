@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :product_update_params,             only:[:update]
+
   def new
     @category_parent_array = Category.where(ancestry: nil)
     @product = Product.new
@@ -41,8 +43,28 @@ class ProductsController < ApplicationController
       render :destroy, alert: '削除に失敗しました。'
     end   
   end
-  private
 
+
+  
+  def edit
+    @category_parent_array = Category.where(ancestry: nil)
+    @product = Product.find(params[:id])
+    @images = @product.images.order(id: "DESC")
+  end
+
+
+  def update
+    @category_parent_array = Category.where(ancestry: nil)
+    @product = Product.find_by(id: params[:id])
+    @images = @product.images.order(id: "DESC")
+    @product.update(post_params)
+    redirect_to root_path
+
+  end
+  
+
+
+  private
   def post_params
     params.require(:product).permit(:id,:user_id,:name,:description,:category_id,:brands,:condition,:delivery_user,:delivery_method,:area,:delivery_days,:price,:created_at,:update_at,images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
@@ -51,7 +73,10 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product)
   end
-  
+
+  def product_update_params
+    params.require(:product)
+  end
 
   end
 
