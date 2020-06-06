@@ -65,17 +65,17 @@
               = link_to product_path(@product), method: :delete, data: { turbolinks: false} do
                 .product-stop-btn この商品を削除する
             -else 
-              -if @product.buyer_id == 0
-                = link_to product_card_confirmation_path(@product), data: {turbolinks: false} do
+              -if @product.buyer_id == nil
+                = link_to  product_purchase_index_path(@product.id), data: {turbolinks: false} do
                   .product-buy-btn 購入画面に進む
               -else
                 .product-buy-btn-sold 売り切れました
-          -else
-            -if @product.buyer_id == 0
-              = link_to user_session_path do
-                .product-buy-btn 購入画面に進む
-            -else
-              .product-buy-btn-sold 売り切れました    
+          -# -else
+          -#   -if @product.buyer_id == 0
+          -#     = link_to user_session_path do
+          -#       .product-buy-btn 購入画面に進む
+          -#   -else
+          -#     .product-buy-btn-sold 売り切れました    
       .item-Details
         %br Gallery viscontiのティアード調のフリルデザインが
         %br 上品＆可愛いロングジャケットです。

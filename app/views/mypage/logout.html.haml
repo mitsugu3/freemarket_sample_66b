@@ -1,3 +1,6 @@
+.header__item
+  = link_to image_tag("/images/material/logo/logo.png", class: "header__item__logo"), posts_index_path
+
 .logout-page
   .side-content
     %nav.mypage-nav
@@ -98,3 +101,44 @@
     .logout-content__box
       = link_to "#", class: "logout-conternt__box__btn" do
         ログアウト
+
+
+.low-content
+  %h2 だれでもかんたん、人生を変えるフリマアプリ
+  %p 今すぐ無料ダウンロード！
+  .low-content__img
+    .low-content__img__1
+    .low-content__img__2
+
+.footer
+  .footer__content
+    .footer__content__left
+      %ul
+        %p FURIMAについて
+        %li
+          会社概要（運営会社）
+        %li 
+          プライバシーポリシー
+        %li
+          FURIMA利用規約
+        %li
+          ポイントに関する特約
+    .footer__content__center
+      %ul
+        %p FURIMAを見る
+        %li
+          カテゴリー一覧
+        %li
+          ブランド一覧
+    .footer__content__right
+      %ul
+        %p ヘルプ＆ガイド
+        %li
+          FURIMAガイド
+        %li
+          FURIMAロゴ利用ガイドライン
+        %li
+          お知らせ
+  .footer__logo
+  .footer__copyright
+    © FURIMA
