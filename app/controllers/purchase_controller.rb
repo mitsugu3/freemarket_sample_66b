@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
+  before_action :set_card,only: [:index, :pay]
   before_action :set_product
-  before_action :set_card
   require 'payjp'
 
   def index
