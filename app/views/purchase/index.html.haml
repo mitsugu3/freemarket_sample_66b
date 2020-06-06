@@ -1,16 +1,26 @@
 .header__item
   = link_to image_tag("/images/material/logo/logo.png", class: "header__item__logo"), posts_index_path
- 
-%label 登録クレジットカード情報
+
+%h2 購入を確定しますか？
+= @product.name
+= @product.price
+
+= image_tag @product.images[0].src.url
+
 %br
-= "**** **** **** " + @default_card_information.last4
+%h3 支払い方法
+- if @default_card_information.blank?
+  %br /
+- else
+  -#以下カード情報を表示
+  = "**** **** **** " + @default_card_information.last4
+  - exp_month = @default_card_information.exp_month.to_s
+  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+  = exp_month + " / " + exp_year
 %br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+= form_tag(action: :pay, method: :post) do
+  %button 購入する
+
 
 .low-content
   %h2 だれでもかんたん、人生を変えるフリマアプリ
@@ -26,7 +36,7 @@
         %p FURIMAについて
         %li
           会社概要（運営会社）
-        %li
+        %li 
           プライバシーポリシー
         %li
           FURIMA利用規約
