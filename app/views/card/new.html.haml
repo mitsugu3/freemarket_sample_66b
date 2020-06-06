@@ -1,6 +1,5 @@
 .header__item
   = link_to image_tag("/images/material/logo/logo.png", class: "header__item__logo"), posts_index_path
- 
 
 = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
@@ -78,7 +77,7 @@
         %p FURIMAについて
         %li
           会社概要（運営会社）
-        %li 
+        %li
           プライバシーポリシー
         %li
           FURIMA利用規約
