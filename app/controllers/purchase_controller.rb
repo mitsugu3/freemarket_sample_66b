@@ -1,10 +1,10 @@
 class PurchaseController < ApplicationController
   before_action :set_product
+  before_action :set_card
   require 'payjp'
 
   def index
-    # binding.pry
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動

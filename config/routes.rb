@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'purchase/done'
   get 'card/new'
   get 'card/show'
 
