@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'purchase/done'
   get 'card/new'
   get 'card/show'
 
@@ -47,6 +48,13 @@ Rails.application.routes.draw do
     member do
       get 'category/get_category_children',to: "products#get_category_children", defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+    end
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end 
   
